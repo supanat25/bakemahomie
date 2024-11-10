@@ -1,87 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bakemahomie</title>
-    <link rel="stylesheet" href="styles.css">
-    
-</head>
-<body>
-    
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
 
-    <div class="welcome-section">
-        <div>
-           <h1>Bakemahomie</h1>  
-
-           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores minima ipsam molestias 
-            tempore odio sunt minus provident, suscipit impedit a, harum 
-            laboriosam unde nisi rem eius, dolorem nemo quam aperiam?
-            </p>
+  <body>
+    <!-- Navbar -->
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-light fixed-top"
+      data-bs-spy="scroll"
+      data-bs-target="#navbar-example"
+      data-bs-offset="0"
+      tabindex="0"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="#">BAKEMAHOMIE</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#menu">Menu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
         </div>
+      </div>
+    </nav>
+    <!-- Carousel -->
+    <!-- Carousel with equal-sized images -->
+    <div class="container mt-5">
+      <div
+        id="carouselExampleControls"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="img/1.jpg" class="d-block w-100 carousel-image" alt="..." />
+            <!-- Replace "..." with your image source -->
+          </div>
+          <div class="carousel-item">
+            <img src="img/2.jpg" class="d-block w-100 carousel-image" alt="..." />
+          </div>
+          <div class="carousel-item">
+            <img src="..." class="d-block w-100 carousel-image" alt="..." />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
     </div>
-    
-    
-    <div class="group-button">    
-        <button onclick="changeGallery(1)"> ทั้งหมด</button>
-        <button onclick="changeGallery(2)">เค้กปอนด์</button>
-        <button onclick="changeGallery(3)">3</button>
-    </div> 
 
-
-
-    <div class="gallery" id="gallery">
-        <!-- รูปภาพจะถูกโหลดจาก JavaScript -->
-    </div>
-    <footer>
-        <p>โทร: <a href="tel:+66987654321">0988292025</a></p>
-        <p>Instagram: <a href="https://www.instagram.com/username" target="_blank">@username</a></p>
-
-
-    </footer>
-
-
-    <script>
-        function changeGallery(page) {
-            let gallery = document.getElementById('gallery');
-            gallery.innerHTML = ''; // ลบรูปภาพทั้งหมดในแกลเลอรีก่อน
-
-            // เปลี่ยนรูปภาพและชื่อภาพตามหมายเลขหน้า
-            let images = [];
-            let titles = [];  // อาร์เรย์ชื่อภาพ
-            if (page === 1) {
-                images = ["img/1.jpg", "img/1.jpg", "img/1.jpg","img/1.jpg", "img/1.jpg", "img/1.jpg" , "img/1.jpg", "img/1.jpg"];
-                titles = ["Photo 1", "Photo 2", "Photo 3"];
-            } else if (page === 2) {
-                images = ["img/1.jpg", "img/1.jpg", "img/1.jpg"];
-                titles = ["Photo 4", "Photo 5", "Photo 6"];
-            } else if (page === 3) {
-                images = ["img/2.jpg", "img/3.jpg", "img/1.jpg", "img/1.jpg", "img/1.jpg", "img/3.jpg"];
-                titles = ["Photo 7", "Photo 8", "Photo 9"];
-            }
-
-            // เพิ่มรูปภาพและชื่อภาพใหม่ลงในแกลเลอรี
-            images.forEach((imgSrc, index) => {
-                let photoDiv = document.createElement('div');  // สร้าง <div> ใหม่สำหรับแต่ละรูปภาพ
-                photoDiv.classList.add('photo');  // เพิ่มคลาส 'photo' สำหรับจัดรูป
-
-                let imgElement = document.createElement('img'); // สร้าง <img> สำหรับรูปภาพ
-                imgElement.src = imgSrc;  // ตั้งค่าแหล่งที่มาของรูปภาพ
-                imgElement.alt = titles[index];  // ใช้ชื่อที่เกี่ยวข้องกับภาพเป็น alt
-
-                let titleElement = document.createElement('p');  // สร้าง <p> สำหรับชื่อรูปภาพ
-                titleElement.classList.add('photo-title');  // เพิ่มคลาส 'photo-title' เพื่อจัดสไตล์
-                titleElement.textContent = titles[index];  // ใส่ชื่อรูปภาพลงใน <p>
-
-                photoDiv.appendChild(imgElement);  // เพิ่ม <img> ไปยัง <div class="photo">
-                photoDiv.appendChild(titleElement);  // เพิ่ม <p> ไปยัง <div class="photo">
-
-                gallery.appendChild(photoDiv);  // เพิ่ม <div class="photo"> ทั้งหมดไปยังแกลเลอรี
-            });
-        }
-
-        // เริ่มต้นแสดงรูปภาพจากหน้า 1 เมื่อโหลดหน้าเว็บ
-        changeGallery(1);
-    </script>
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

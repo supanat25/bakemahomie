@@ -10,6 +10,22 @@ body {
 /* styles.css */
 .carousel-image {
     height: 90vh; /* กำหนดความสูงตามที่ต้องการ */
+    width: 100;
     object-fit: cover; /* ทำให้รูปเต็มพื้นที่โดยไม่เสียอัตราส่วน */
 }
 
+/* Masonry Grid */
+.masonry-grid {
+    column-count: 3; /* กำหนดจำนวนคอลัมน์ */
+    column-gap: 1em; /* เว้นระยะระหว่างคอลัมน์ */
+}
+
+.masonry-item {
+    break-inside: avoid; /* ป้องกันการตัดรูปในคอลัมน์ */
+    margin-bottom: 1em;
+}
+
+.masonry-item img {
+    width: 100%;
+    border-radius: 8px;
+}

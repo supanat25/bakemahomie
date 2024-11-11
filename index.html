@@ -16,13 +16,12 @@
   <body>
     <!-- Navbar -->
     <nav
-      class="navbar navbar-expand-lg fixed-top "
-      style="background-color:none;"
+      class="navbar navbar-expand-lg fixed-top"
+      style="background-color: #ffcbe7"
       data-bs-spy="scroll"
       data-bs-target="#navbar-example"
       data-bs-offset="0"
       tabindex="0"
-      
     >
       <div class="container">
         <a class="navbar-brand" href="#">BAKEMAHOMIE</a>
@@ -59,14 +58,22 @@
       >
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="img/1.jpg" class="d-block w-100 carousel-image" alt="..." />
+            <img
+              src="img/1.jpg"
+              class="d-block w-100 carousel-image"
+              alt="..."
+            />
             <!-- Replace "..." with your image source -->
           </div>
           <div class="carousel-item">
-            <img src="img/2.jpg" class="d-block w-100 carousel-image" alt="..." />
+            <img
+              src="img/2.jpg"
+              class="d-block w-100 carousel-image"
+              alt="..."
+            />
           </div>
           <div class="carousel-item">
-            <img src="..." class="d-block w-100 carousel-image" alt="..." />
+            <img src="img/price.jpg" class="d-block w-100 carousel-image" alt="..." />
           </div>
         </div>
         <button
@@ -91,46 +98,118 @@
     </div>
 
     <div class="container mt-5" id="menu">
-        <h2 class="text-center mb-4">Our Menu</h2>
-        <div class="masonry-grid">
-            <div class="masonry-item"><img src="img/1.jpg" alt="Photo 1" class="img-fluid"></div>
-            <div class="masonry-item"><img src="img/3.jpg" alt="Photo 2" class="img-fluid"></div>
-            <div class="masonry-item"><img src="img/1.jpg" alt="Photo 3" class="img-fluid"></div>
-            <div class="masonry-item"><img src="img/2.jpg" alt="Photo 4" class="img-fluid"></div>
-            <div class="masonry-item"><img src="img/1.jpg" alt="Photo 5" class="img-fluid"></div>
-            <div class="masonry-item"><img src="img/1.jpg" alt="Photo 3" class="img-fluid"></div>
-            <div class="masonry-item"><img src="img/2.jpg" alt="Photo 4" class="img-fluid"></div>
-            <div class="masonry-item"><img src="img/1.jpg" alt="Photo 5" class="img-fluid"></div>
-            <div class="masonry-item"><img src="img/1.jpg" alt="Photo 1" class="img-fluid"></div>
-            <div class="masonry-item"><img src="img/3.jpg" alt="Photo 2" class="img-fluid"></div>
-            <div class="masonry-item"><img src="img/1.jpg" alt="Photo 3" class="img-fluid"></div>
-            <!-- เพิ่มรูปภาพเพิ่มเติมตามต้องการ -->
+      <h2 class="text-center mb-4">Our Menu</h2>
+
+      <div class="container text-center my-4">
+        <div class="btn-group" role="group" aria-label="Category Filter">
+          <button
+            type="button"
+            class="btn btn-light rounded-pill"
+            onclick="filterGallery('all')"
+          >
+            ทั้งหมด
+          </button>
+          <button
+            type="button"
+            class="btn btn-light rounded-pill"
+            onclick="filterGallery('cake')"
+          >
+            เค้ก
+          </button>
+          <button
+            type="button"
+            class="btn btn-light rounded-pill"
+            onclick="filterGallery('bread')"
+          >
+            ขนมปัง
+          </button>
         </div>
+      </div>
+
+      <div class="masonry-grid">
+        <div class="masonry-item cake">
+          <img src="img/1.jpg" alt="Photo 1" class="img-fluid" />
+        </div>
+        <div class="masonry-item bread">
+          <img src="img/1.jpg" alt="Photo 2" class="img-fluid" />
+        </div>
+        <div class="masonry-item cake">
+          <img src="img/1.jpg" alt="Photo 3" class="img-fluid" />
+        </div>
+        <div class="masonry-item bread">
+          <img src="img/2.jpg" alt="Photo 4" class="img-fluid" />
+        </div>
+        <div class="masonry-item cake">
+          <img src="img/1.jpg" alt="Photo 5" class="img-fluid" />
+        </div>
+        <div class="masonry-item bread">
+          <img src="img/3.jpg" alt="Photo 6" class="img-fluid" />
+        </div>
+        <div class="masonry-item bread">
+          <img src="img/price.jpg" alt="Photo 6" class="img-fluid" />
+        </div>
+        <div class="masonry-item bread">
+          <img src="img/3.jpg" alt="Photo 6" class="img-fluid" />
+        </div>
+        <div class="masonry-item bread">
+          <img src="img/3.jpg" alt="Photo 6" class="img-fluid" />
+        </div>
+        <!-- เพิ่มรูปภาพเพิ่มเติมตามต้องการ -->
+      </div>
     </div>
 
-    <div id="contact" class="container-fluid d-flex py-5" style="min-height: 100vh;">
-        <!-- ส่วนข้อความการติดต่อด้านซ้าย -->
-         
-        <div class="col-md-6 d-flex flex-column justify-content-center align-items-center text-center p-5" style="background-color: #fc6b6b;">
-            <h2>Contact Us</h2>
-            <div class="my-3 d-flex align-items-center">
-                <img src="https://img.icons8.com/color/48/000000/instagram-new.png" alt="Instagram" style="width: 48px; height: 48px;">
-                <span class="ms-3 fs-4">bakemahomie</span>
-            </div>
-            <div class="my-3 d-flex align-items-center">
-                <img src="https://img.icons8.com/color/48/000000/phone.png" alt="Phone" style="width: 48px; height: 48px;">
-                <span class="ms-3 fs-4">0988292025</span>
-            </div>
+    <div
+      id="contact"
+      class="container-fluid d-flex pt-5"
+      style="min-height: 100vh"
+    >
+      <!-- ส่วนข้อความการติดต่อด้านซ้าย -->
+
+      <div
+        class="col-md-6 d-flex flex-column justify-content-center align-items-center text-center p-5"
+        style="background-color: #ffcbe7"
+      >
+        <h2>Contact Us</h2>
+        <div class="my-3 d-flex align-items-center">
+          <img
+            src="https://img.icons8.com/color/48/000000/instagram-new.png"
+            alt="Instagram"
+            style="width: 48px; height: 48px"
+          />
+          <span class="ms-3 fs-4">bakemahomie</span>
         </div>
-    
-        <!-- ส่วนรูปภาพด้านขวา -->
-        <div class="col-md-6" style="background-image: url('img/1.jpg'); background-size: cover; background-position: center;">
+        <div class="my-3 d-flex align-items-center">
+          <img
+            src="https://img.icons8.com/color/48/000000/phone.png"
+            alt="Phone"
+            style="width: 48px; height: 48px"
+          />
+          <span class="ms-3 fs-4">0988292025</span>
         </div>
+      </div>
+
+      <div
+        class="col-md-6"
+        style="
+          background-image: url('img/1.jpg');
+          background-size: cover;
+          background-position: center;
+        "
+      ></div>
     </div>
-    
-    
-    
-    
+
+    <script>
+      function filterGallery(category) {
+        let items = document.querySelectorAll(".masonry-item");
+        items.forEach((item) => {
+          if (category === "all" || item.classList.contains(category)) {
+            item.style.display = "block";
+          } else {
+            item.style.display = "none";
+          }
+        });
+      }
+    </script>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"

@@ -21,14 +21,22 @@ body {
 }
 
 .masonry-item {
-    break-inside: avoid; /* ป้องกันการตัดรูปในคอลัมน์ */
+    break-inside: avoid; 
     margin-bottom: 1em;
+    transition: 1s ease;
 }
 
 .masonry-item img {
     width: 100%;
     border-radius: 8px;
 }
+
+.masonry-item img:hover{
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    transition: 1s ease;
+    }
 
 /* 
 .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {

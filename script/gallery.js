@@ -39,7 +39,7 @@ function displayGallery(category) {
           imagesToDisplay = cheeseImages;
      }
 
-     imagesToDisplay.forEach((image) => {
+     imagesToDisplay.forEach((image,index) => {
           const imgElement = document.createElement("img");
           imgElement.src = image.path;
           imgElement.classList.add("img-fluid");
@@ -55,11 +55,15 @@ function displayGallery(category) {
           });
 
           const masonryItem = document.createElement("div");
-          masonryItem.classList.add("masonry-item");
+          masonryItem.classList.add("masonry-item","fade-in");
           masonryItem.appendChild(imgElement);
           masonryItem.appendChild(nameElement);
 
           galleryContainer.appendChild(masonryItem);
+
+          setTimeout(() => {
+               masonryItem.classList.add("show");
+             }, index * 100); // delay ทีละรูปเพื่อความนุ่มนวล
      });
 }
 

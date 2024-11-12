@@ -106,7 +106,7 @@ body {
 
     .btn-group, .btn-group-vertical {
         display: block !important;
-        vertical-align: middle;
+        /* vertical-align: middle; */
 
     }
 }

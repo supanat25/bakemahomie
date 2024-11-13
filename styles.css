@@ -184,7 +184,7 @@ body {
     background-image: url('img/cheese/straw2.jpg');
     background-size: cover;
     background-position: center;
-    filter: blur(8px) brightness(0.5); 
+    filter: blur(8px) brightness(0.5);
     z-index: -1;
 }
 
@@ -221,6 +221,10 @@ body {
     .btn-group-vertical {
         display: block !important;
         /* vertical-align: middle; */
+    }
+
+    .btn-group button {
+        margin-bottom: 5px;
 
     }
 }
@@ -228,4 +232,4 @@ body {
 
 hr.new1 {
     border-top: 1px solid rgb(0, 0, 0);
-  }
+}

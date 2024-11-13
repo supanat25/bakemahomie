@@ -1,8 +1,26 @@
+import {
+     cakeImages,
+     cheeseImages,
+     dry,
+     allImages,
+     pondImages,
+     tardImages,
+} from "./imageData.js";
 
- 
-import { cakeImages, cheeseImages, dry, allImages, pondImages, tardImages } from './imageData.js';
+// เลือกปุ่มทั้งหมดใน .btn-group
+const buttons = document.querySelectorAll(".btn-group button");
 
+// เพิ่มฟังก์ชัน displayGallery
 export function displayGallery(category) {
+     // ลบคลาส active จากปุ่มทั้งหมด
+     buttons.forEach((button) => button.classList.remove("active"));
+
+     // เพิ่มคลาส active ให้กับปุ่มที่ถูกคลิก
+     const activeButton = document.querySelector(
+          `.btn-group button[onclick="displayGallery('${category}')"]`
+     );
+     if (activeButton) activeButton.classList.add("active");
+
      const galleryContainer = document.querySelector(".masonry-grid");
      galleryContainer.innerHTML = "";
 
@@ -14,15 +32,15 @@ export function displayGallery(category) {
           imagesToDisplay = cakeImages;
      } else if (category === "cheeseCake") {
           imagesToDisplay = cheeseImages;
-     }else if (category === "pond") {
+     } else if (category === "pond") {
           imagesToDisplay = pondImages;
-     }else if (category === "dry") {
+     } else if (category === "dry") {
           imagesToDisplay = dry;
-     }else if (category === "tard") {
+     } else if (category === "tard") {
           imagesToDisplay = tardImages;
      }
 
-     imagesToDisplay.forEach((image,index) => {
+     imagesToDisplay.forEach((image, index) => {
           const imgElement = document.createElement("img");
           imgElement.src = image.path;
           imgElement.classList.add("img-fluid");
@@ -38,7 +56,7 @@ export function displayGallery(category) {
           });
 
           const masonryItem = document.createElement("div");
-          masonryItem.classList.add("masonry-item","fade-in");
+          masonryItem.classList.add("masonry-item", "fade-in");
           masonryItem.appendChild(imgElement);
           masonryItem.appendChild(nameElement);
 
@@ -46,24 +64,9 @@ export function displayGallery(category) {
 
           setTimeout(() => {
                masonryItem.classList.add("show");
-             }, index * 100); // delay ทีละรูปเพื่อความนุ่มนวล
+          }, index * 100); // delay ทีละรูปเพื่อความนุ่มนวล
      });
 }
-
-// เลือกปุ่มทั้งหมดใน .btn-group
-const buttons = document.querySelectorAll('.btn-group button');
-
-// เพิ่ม event listener สำหรับการคลิกที่ปุ่มแต่ละปุ่ม
-buttons.forEach(button => {
-    button.addEventListener('click', () => {
-        // ลบคลาส active จากปุ่มทั้งหมด
-        buttons.forEach(btn => btn.classList.remove('active'));
-        
-        // เพิ่มคลาส active ให้กับปุ่มที่ถูกคลิก
-        button.classList.add('active');
-    });
-});
-
 
 // เรียกใช้งาน displayGallery('all') เมื่อโหลดหน้าเว็บ
 document.addEventListener("DOMContentLoaded", () => {

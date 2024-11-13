@@ -15,6 +15,7 @@ export const cakeImages = [
      { path: "img/cake/orangeCake2.jpg", name: "เค้กสตรอว์เบอร์รี" },
      { path: "img/cake/straw2.jpg", name: "เค้กสตรอว์เบอร์รี" },
      { path: "img/cake/lemon.jpg", name: "เค้กสตรอว์เบอร์รี" },
+     { path: "img/cake/straw3.jpg", name: "เค้กสตรอว์เบอร์รี" },
 ];
 
 export const cheeseImages = [
@@ -119,6 +120,11 @@ export const pondImages = [
     { path: "img/pond/p77.jpg", name: "ขนมปังฝรั่งเศส" },
     { path: "img/pond/p78.jpg", name: "ขนมปังฝรั่งเศส" },
     { path: "img/pond/p79.jpg", name: "ขนมปังฝรั่งเศส" },
+    { path: "img/pond/p80.jpg", name: "ขนมปังฝรั่งเศส" },
+    { path: "img/pond/p81.jpg", name: "ขนมปังฝรั่งเศส" },
+    { path: "img/pond/p82.jpg", name: "ขนมปังฝรั่งเศส" },
+    { path: "img/pond/p83.jpg", name: "ขนมปังฝรั่งเศส" },
+    { path: "img/pond/p84.jpg", name: "ขนมปังฝรั่งเศส" },
 ];
 
 

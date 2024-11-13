@@ -59,7 +59,6 @@ export function displayGallery(category) {
           masonryItem.classList.add("masonry-item", "fade-in");
           masonryItem.appendChild(imgElement);
           masonryItem.appendChild(nameElement);
-
           galleryContainer.appendChild(masonryItem);
 
           setTimeout(() => {

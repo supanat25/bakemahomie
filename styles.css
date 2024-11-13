@@ -4,7 +4,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: 0;
+    margin: 0 !important;
 }
 
 .shadow-navbar {
@@ -106,7 +106,7 @@ body {
   
 
 
-.contact-section {
+/* .contact-section {
     display: flex;
     height: 100vh;
 }
@@ -124,7 +124,7 @@ body {
     width: 50%;
     background-size: cover;
     background-position: center;
-}
+} */
 
 
 .btn-group .btn {

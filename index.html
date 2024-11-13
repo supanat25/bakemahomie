@@ -154,16 +154,23 @@
                          <button
                               type="button"
                               class="btn btn-light rounded-pill"
-                              onclick="displayGallery('all')"
+                              onclick="displayGallery('dry')"
                          >
                               ขนมแห้ง
                          </button>
                          <button
                               type="button"
                               class="btn btn-light rounded-pill"
-                              onclick="displayGallery('cake')"
+                              onclick="displayGallery('tard')"
                          >
-                              มาใหม่
+                              ทาร์ต
+                         </button>
+                         <button
+                              type="button"
+                              class="btn btn-light rounded-pill"
+                              onclick="displayGallery('pond')"
+                         >
+                              เค้กปอนด์
                          </button>
                     </div>
                </div>
@@ -173,13 +180,12 @@
 
           <div
                id="contact"
-               class="container-fluid d-flex pt-5"
+               class="container-fluid d-flex pt-5 px-0"
                style="min-height: 100vh"
           >
-               <!-- ส่วนข้อความการติดต่อด้านซ้าย -->
-
+               <!-- เนื้อหาการติดต่อเต็มจอ -->
                <div
-                    class="col-md-6 d-flex flex-column justify-content-center align-items-center text-center p-5"
+                    class="col-12 d-flex flex-column justify-content-center align-items-center text-center p-5"
                     style="background-color: #ffcbe7"
                >
                     <h2>Contact Us</h2>
@@ -199,16 +205,15 @@
                          />
                          <span class="ms-3 fs-4">0988292025</span>
                     </div>
+                    <div class="my-3 d-flex align-items-center">
+                         <img
+                              src="https://img.icons8.com/color/48/000000/line-me.png"
+                              alt="Line"
+                              style="width: 48px; height: 48px"
+                         />
+                         <span class="ms-3 fs-4">bakemahomie@line</span>
+                    </div>
                </div>
-
-               <div
-                    class="col-md-6"
-                    style="
-                         background-image: url('img/1.jpg');
-                         background-size: cover;
-                         background-position: center;
-                    "
-               ></div>
           </div>
 
           <div
@@ -218,23 +223,6 @@
           >
                <img id="fullscreenImage" src="" alt="Fullscreen Image" />
           </div>
-
-<!-- 
-          <script>
-               // เปิด modal และแสดงรูปภาพ
-               function openFullscreen(src) {
-                 const modal = document.getElementById("fullscreenModal");
-                 const modalImage = document.getElementById("fullscreenImage");
-                 modal.style.display = "flex";
-                 modalImage.src = src;
-               }
-             
-               // ปิด modal เมื่อคลิกนอกภาพ
-               function closeFullscreen() {
-                 const modal = document.getElementById("fullscreenModal");
-                 modal.style.display = "none";
-               }
-             </script> -->
 
           <script
                src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"

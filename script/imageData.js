@@ -267,11 +267,11 @@ function getRandomImages(array, n) {
 }
 
 // ใช้ฟังก์ชัน getRandomImages เพื่อสุ่ม 20 รูปจากแต่ละประเภท
-export const randomCakeImages = getRandomImages(cakeImages, 15);
+export const randomCakeImages = getRandomImages(cakeImages, 20);
 export const randomCheeseImages = getRandomImages(cheeseImages, 15);
 export const randomDryImages = getRandomImages(dry, 15);
 export const randomTardImages = getRandomImages(tardImages, 15);
-export const randomPoundImages = getRandomImages(pondImages, 15);
+export const randomPoundImages = getRandomImages(pondImages, 20);
 
 // ฟังก์ชันสำหรับสุ่มสลับตำแหน่งอาเรย์
 function shuffleArray(array) {

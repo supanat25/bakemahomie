@@ -1,10 +1,10 @@
 import {
+     allImages,
      cakeImages,
      cheeseImages,
-     dry,
-     allImages,
-     pondImages,
      tardImages,
+     dry,
+     pondImages
 } from "./imageData.js";
 
 // เลือกปุ่มทั้งหมดใน .btn-group

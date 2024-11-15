@@ -92,8 +92,8 @@ export function displayGallery(category) {
           const iconElement = document.createElement("img");
           iconElement.src = "https://img.icons8.com/fluency-systems-filled/48/zoom-region-mode.png";
           iconElement.alt = "Fullscreen Icon";
-          iconElement.style.width = "15px"; // ปรับขนาดไอคอนตามต้องการ
-          iconElement.style.height = "15px";
+          iconElement.style.width = "20px"; // ปรับขนาดไอคอนตามต้องการ
+          iconElement.style.height = "20px";
           
           buttonElement.appendChild(iconElement); // เพิ่มไอคอนลงในปุ่ม
       

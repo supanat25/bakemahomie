@@ -1,29 +1,129 @@
-// ดักจับการ Submit Form
-document.getElementById("uploadForm").addEventListener("submit", function (event) {
-    event.preventDefault(); // ป้องกันการรีเฟรชหน้า
+export function handleFormSubmit(event) {
+     console.log("dfsdfdsfdsfdsfsdfsdfdsfdsf");
+     event.preventDefault(); // ป้องกันการรีเฟรชหน้า
 
-    const bakeryName = document.getElementById("bakeryName").value;
-    const bakeryType = document.getElementById("bakeryType").value;
-    const imageFile = document.getElementById("imageFile").files[0];
+     const bakeryName = document.getElementById("bakeryName").value;
+     const bakeryType = document.getElementById("bakeryType").value;
+     const imageFile = document.getElementById("imageFile").files[0];
 
-    if (bakeryName && bakeryType && imageFile) {
-        // แสดงข้อมูลใน Console (ชั่วคราว)
-        console.log("ชื่อขนม:", bakeryName);
-        console.log("ประเภท:", bakeryType);
-        console.log("ไฟล์:", imageFile.name);
+     if (bakeryName && bakeryType && imageFile) {
+          console.log("ชื่อขนม:", bakeryName);
+          console.log("ประเภท:", bakeryType);
+          console.log("ไฟล์:", imageFile.name);
 
-        // ตัวอย่างการอัพโหลดข้อมูลไปยัง Server
-        // (คุณต้องเชื่อมต่อกับ API หรือ Backend)
-        // const formData = new FormData();
-        // formData.append("name", bakeryName);
-        // formData.append("type", bakeryType);
-        // formData.append("image", imageFile);
-        // fetch("your-upload-endpoint", { method: "POST", body: formData });
+          // ตัวอย่างส่งข้อมูลไป Backend
+          // const formData = new FormData();
+          // formData.append("name", bakeryName);
+          // formData.append("type", bakeryType);
+          // formData.append("image", imageFile);
+          // fetch("your-upload-endpoint", { method: "POST", body: formData });
+     } else {
+          alert("กรุณากรอกข้อมูลให้ครบถ้วน");
+     }
+}
 
-        // ปิด Modal หลังการ Submit
-        const uploadModal = new bootstrap.Modal(document.getElementById("uploadModal"));
-        uploadModal.hide();
-    } else {
-        alert("กรุณากรอกข้อมูลให้ครบถ้วน");
-    }
+document.addEventListener("DOMContentLoaded", () => {
+     // ฟังก์ชันโหลดข้อมูลและแสดงในตาราง
+     const loadTableData = async () => {
+          try {
+               const response = await fetch(
+                    "http://localhost:3000/get_image_data/bakery"
+               );
+               const data = await response.json();
+
+               // อ้างอิงตารางในหน้า admin
+               const tableBody = document.querySelector("#admin-content tbody");
+               tableBody.innerHTML = ""; // ล้างข้อมูลเก่าออกก่อน
+
+               data.forEach((item) => {
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
+                    <th scope="row">${item.id_bakery}</th>
+                    <td>${item.name}</td>
+                    <td>${item.type_name}</td>
+                    <td>
+                        <button class="btn btn-primary btn-view" data-img="${item.img_path}">ดูรูป</button>
+                        <button class="btn btn-danger btn-delete" data-id="${item.id_bakery}">ลบ</button>
+                    </td>
+                `;
+                    tableBody.appendChild(row);
+               });
+
+               // เพิ่ม EventListener ให้ปุ่ม "ดูรูป"
+               document.querySelectorAll(".btn-view").forEach((button) => {
+                    button.addEventListener("click", (event) => {
+                         const imgPath = event.target.getAttribute("data-img");
+                         alert(`แสดงรูปภาพ: ${imgPath}`); // คุณสามารถปรับเป็นการแสดงรูปจริงใน modal ได้
+                    });
+               });
+
+               // เพิ่ม EventListener ให้ปุ่ม "ลบ"
+               document.querySelectorAll(".btn-delete").forEach((button) => {
+                    button.addEventListener("click", (event) => {
+                         const bakeryId = event.target.getAttribute("data-id");
+                         deleteBakery(bakeryId); // เรียกฟังก์ชันลบข้อมูล
+                    });
+               });
+          } catch (error) {
+               console.error("Error loading table data:", error);
+          }
+     };
+
+     // ฟังก์ชันลบข้อมูล
+     const deleteBakery = async (id) => {
+          try {
+               const response = await fetch(
+                    `http://localhost:3000/delete_bakery/${id}`,
+                    {
+                         method: "DELETE",
+                    }
+               );
+               if (response.ok) {
+                    alert("ลบข้อมูลสำเร็จ");
+                    loadTableData(); // โหลดข้อมูลใหม่
+               } else {
+                    alert("ลบข้อมูลไม่สำเร็จ");
+               }
+          } catch (error) {
+               console.error("Error deleting bakery:", error);
+          }
+     };
+
+     // เรียกใช้ฟังก์ชันโหลดข้อมูลเมื่อหน้าเว็บโหลด
+     loadTableData();
+});
+
+document.getElementById("upload-form").addEventListener("submit", async (e) => {
+     e.preventDefault();
+
+     const name = document.getElementById("name").value;
+     const typeId = document.getElementById("type").value;
+     const imageFile = document.getElementById("image").files[0];
+
+     if (!imageFile) {
+          alert("กรุณาเลือกไฟล์รูปภาพ");
+          return;
+     }
+
+     // อ่านไฟล์รูปภาพเป็น Base64
+     const reader = new FileReader();
+     reader.onload = async () => {
+          const imageBase64 = reader.result.split(",")[1];
+
+          // ส่งข้อมูลไปที่ Back-End
+          const response = await fetch("/upload", {
+               method: "POST",
+               headers: { "Content-Type": "application/json" },
+               body: JSON.stringify({ name, typeId, imageBase64 }),
+          });
+
+          if (response.ok) {
+               alert("อัปโหลดสำเร็จ");
+               location.reload(); // รีโหลดหน้า
+          } else {
+               alert("เกิดข้อผิดพลาดในการอัปโหลด");
+          }
+     };
+
+     reader.readAsDataURL(imageFile);
 });

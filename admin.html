@@ -109,68 +109,50 @@
                               ></button>
                          </div>
                          <div class="modal-body">
-                              <form id="uploadForm">
+                              <form id="upload-form">
                                    <div class="mb-3">
-                                        <label
-                                             for="bakeryName"
-                                             class="form-label"
-                                             >ชื่อขนม</label
-                                        >
-                                        <input
-                                             type="text"
-                                             class="form-control"
-                                             id="bakeryName"
-                                             required
-                                        />
+                                       <label for="name" class="form-label">ชื่อขนม</label>
+                                       <input type="text" class="form-control" id="name" required />
                                    </div>
                                    <div class="mb-3">
-                                        <label
-                                             for="bakeryType"
-                                             class="form-label"
-                                             >ประเภท</label
-                                        >
-                                        <select
-                                             class="form-select"
-                                             id="bakeryType"
-                                             required
-                                        >
-                                             <option value="" selected disabled>
-                                                  เลือกประเภท
-                                             </option>
-                                             <option value="cake">เค้ก</option>
-                                             <option value="cheesecake">
-                                                  ชีสเค้ก
-                                             </option>
-                                             <option value="tart">ทาร์ต</option>
-                                             <option value="pound">
-                                                  พาวด์เค้ก
-                                             </option>
-                                             <option value="dry">
-                                                  ขนมแห้ง
-                                             </option>
+                                       <label for="type" class="form-label">ประเภท</label>
+                                       <select class="form-select" id="type" required>
+                                           <option value="1">เค้ก</option>
+                                           <option value="2">ชีสเค้ก</option>
+                                           <option value="3">ทาร์ต</option>
+                                           <option value="4">เค้กปอนด์</option>
+                                           <option value="5">ขนมแห้ง</option>
+                                           
+                                       </select>
+                                   </div>
+
+                                   <div class="mb-3">
+                                        <label for="ingredient" class="form-label">ส่วนประกอบเด่น</label>
+                                        <select class="form-select" id="ingredient">
+                                            <option value="1">สตอเบอร์รี่</option>
+                                            <option value="2">บูลเบอร์รี่</option>
+                                            <option value="3">เลม่อน</option>
+                                            <option value="4">องุ่น</option>
+                                            <option value="5">มะม่วง</option>
+                                            <option value="6">ส้ม</option>
+                                            <option value="7">มะพร้าว</option>
+                                            <option value="8">ชาเขียว</option>
+                                            <option value="9">ชาไทย</option>
+                                            <option value="10">ช็อคโกแลต</option>
+                                            <option value="11">ธัญพืช</option>
+                                            <option value="12">ผลไม้รวม</option>
+                                            <option value="13">ผลไม้รวม</option>
+                                            <option value="14">อื่นๆ</option>
+                                            
                                         </select>
-                                   </div>
+                                    </div>
                                    <div class="mb-3">
-                                        <label
-                                             for="imageFile"
-                                             class="form-label"
-                                             >เลือกรูปภาพ</label
-                                        >
-                                        <input
-                                             type="file"
-                                             class="form-control"
-                                             id="imageFile"
-                                             accept="image/*"
-                                             required
-                                        />
+                                       <label for="image" class="form-label">อัปโหลดรูปภาพ</label>
+                                       <input type="file" class="form-control" id="image" accept="image/*" required />
                                    </div>
-                                   <button
-                                        type="submit"
-                                        class="btn btn-primary w-100"
-                                   >
-                                        อัพโหลด
-                                   </button>
-                              </form>
+                                   <button type="submit" class="btn btn-primary">อัปโหลด</button>
+                               </form>
+                               
                          </div>
                     </div>
                </div>

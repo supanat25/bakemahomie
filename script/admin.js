@@ -1,25 +1,9 @@
 export function handleFormSubmit(event) {
      console.log("dfsdfdsfdsfdsfsdfsdfdsfdsf");
      event.preventDefault(); // ป้องกันการรีเฟรชหน้า
-
-     const bakeryName = document.getElementById("bakeryName").value;
-     const bakeryType = document.getElementById("bakeryType").value;
-     const imageFile = document.getElementById("imageFile").files[0];
-
-     if (bakeryName && bakeryType && imageFile) {
-          console.log("ชื่อขนม:", bakeryName);
-          console.log("ประเภท:", bakeryType);
-          console.log("ไฟล์:", imageFile.name);
-
-          // ตัวอย่างส่งข้อมูลไป Backend
-          // const formData = new FormData();
-          // formData.append("name", bakeryName);
-          // formData.append("type", bakeryType);
-          // formData.append("image", imageFile);
-          // fetch("your-upload-endpoint", { method: "POST", body: formData });
-     } else {
-          alert("กรุณากรอกข้อมูลให้ครบถ้วน");
-     }
+     //  const bakeryName = document.getElementById("bakeryName").value;
+     //  const bakeryType = document.getElementById("bakeryType").value;
+     //  const imageFile = document.getElementById("imageFile").files[0];
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -93,11 +77,13 @@ document.addEventListener("DOMContentLoaded", () => {
      loadTableData();
 });
 
+
 document.getElementById("upload-form").addEventListener("submit", async (e) => {
      e.preventDefault();
 
      const name = document.getElementById("name").value;
      const typeId = document.getElementById("type").value;
+     const id_ingredient = document.getElementById("ingredient").value;
      const imageFile = document.getElementById("image").files[0];
 
      if (!imageFile) {
@@ -111,10 +97,10 @@ document.getElementById("upload-form").addEventListener("submit", async (e) => {
           const imageBase64 = reader.result.split(",")[1];
 
           // ส่งข้อมูลไปที่ Back-End
-          const response = await fetch("/upload", {
+          const response = await fetch("http://localhost:3000/upload/bakery", {
                method: "POST",
                headers: { "Content-Type": "application/json" },
-               body: JSON.stringify({ name, typeId, imageBase64 }),
+               body: JSON.stringify({ name, typeId, imageBase64 , id_ingredient }),
           });
 
           if (response.ok) {

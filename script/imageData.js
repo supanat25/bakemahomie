@@ -1,3 +1,37 @@
+export let allImages = [];
+export let cakeImages = [];
+export let cheeseImages = [];
+export let tardImages = [];
+export let dry = [];
+export let pondImages = [];
+
+// ฟังก์ชันสำหรับดึงข้อมูลจาก API
+export async function fetchImageData() {
+    try {
+        const response = await fetch("http://localhost:3000/get_image_data/bakery");
+        if (!response.ok) {
+            throw new Error("Failed to fetch image data");
+        }
+        const images = await response.json();
+
+        // จัดกลุ่มข้อมูลตามประเภท
+        allImages = images;
+        cakeImages = images.filter(image => image.type_name === "Cake");
+        cheeseImages = images.filter(image => image.type_name === "Cheese Cake");
+        tardImages = images.filter(image => image.type_name === "Tart");
+        dry = images.filter(image => image.type_name === "Dry");
+        pondImages = images.filter(image => image.type_name === "Pound cake");
+    } catch (error) {
+        console.error("Error fetching image data:", error);
+    }
+}
+
+
+
+
+
+
+
 // export const cakeImages = [
      
 //      { path: "https://ik.imagekit.io/4mmx1au8d/bakemahomie/cake/c1.jpg?updatedAt=1731573239253", name: "White n Chocolate cake" },

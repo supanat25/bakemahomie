@@ -4,7 +4,8 @@ import {
      cheeseImages,
      tardImages,
      dry,
-     pondImages
+     pondImages,
+     fetchImageData
 } from "./imageData.js";
 
 // เลือกปุ่มทั้งหมดใน .btn-group
@@ -25,24 +26,16 @@ export function displayGallery(category) {
      galleryContainer.innerHTML = "";
 
      let imagesToDisplay = [];
-
-     if (category === "all") {
-          imagesToDisplay = allImages;
-     } else if (category === "cake") {
-          imagesToDisplay = cakeImages;
-     } else if (category === "cheeseCake") {
-          imagesToDisplay = cheeseImages;
-     } else if (category === "pond") {
-          imagesToDisplay = pondImages;
-     } else if (category === "dry") {
-          imagesToDisplay = dry;
-     } else if (category === "tard") {
-          imagesToDisplay = tardImages;
-     }
+    if (category === "all") imagesToDisplay = allImages;
+    else if (category === "cake") imagesToDisplay = cakeImages;
+    else if (category === "cheeseCake") imagesToDisplay = cheeseImages;
+    else if (category === "pond") imagesToDisplay = pondImages;
+    else if (category === "dry") imagesToDisplay = dry;
+    else if (category === "tard") imagesToDisplay = tardImages;
 
       imagesToDisplay.forEach((image, index) => {
           const imgElement = document.createElement("img");
-          imgElement.src = image.path;
+          imgElement.src = image.img_path;
           imgElement.classList.add("img-fluid");
       
           // สร้าง nameElement สำหรับแสดงชื่อรูปภาพ
@@ -69,7 +62,7 @@ export function displayGallery(category) {
           buttonElement.appendChild(iconElement); // เพิ่มไอคอนลงในปุ่ม
       
           buttonElement.onclick = function() {
-              openFullscreen(image.path);
+              openFullscreen(image.img_path);
           };
       
           const masonryItem = document.createElement("div");
@@ -86,8 +79,12 @@ export function displayGallery(category) {
       
 }
 
-// เรียกใช้งาน displayGallery('all') เมื่อโหลดหน้าเว็บ
-document.addEventListener("DOMContentLoaded", () => {
-     displayGallery("all");
-});
+// // เรียกใช้งาน displayGallery('all') เมื่อโหลดหน้าเว็บ
+// document.addEventListener("DOMContentLoaded", () => {
+//      displayGallery("all");
+// });
 
+document.addEventListener("DOMContentLoaded", async () => {
+    await fetchImageData(); // เรียก API เพื่อดึงข้อมูล
+    displayGallery("all"); // แสดง Gallery
+});

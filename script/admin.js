@@ -77,39 +77,45 @@ document.addEventListener("DOMContentLoaded", () => {
      loadTableData();
 });
 
-
 document.getElementById("upload-form").addEventListener("submit", async (e) => {
      e.preventDefault();
-
+ 
      const name = document.getElementById("name").value;
      const typeId = document.getElementById("type").value;
-     const id_ingredient = document.getElementById("ingredient").value;
+     const ingredient = document.getElementById("ingredient").value;
      const imageFile = document.getElementById("image").files[0];
-
+ 
      if (!imageFile) {
-          alert("กรุณาเลือกไฟล์รูปภาพ");
-          return;
+         alert("กรุณาเลือกไฟล์รูปภาพ");
+         return;
      }
-
-     // อ่านไฟล์รูปภาพเป็น Base64
-     const reader = new FileReader();
-     reader.onload = async () => {
-          const imageBase64 = reader.result.split(",")[1];
-
-          // ส่งข้อมูลไปที่ Back-End
-          const response = await fetch("http://localhost:3000/upload/bakery", {
-               method: "POST",
-               headers: { "Content-Type": "application/json" },
-               body: JSON.stringify({ name, typeId, imageBase64 , id_ingredient }),
-          });
-
-          if (response.ok) {
-               alert("อัปโหลดสำเร็จ");
-               location.reload(); // รีโหลดหน้า
-          } else {
-               alert("เกิดข้อผิดพลาดในการอัปโหลด");
-          }
-     };
-
-     reader.readAsDataURL(imageFile);
-});
+ 
+     const formData = new FormData();
+     formData.append("name", name);
+     formData.append("typeId", typeId);
+     formData.append("ingredient", ingredient);
+     formData.append("image", imageFile);
+ 
+     try {
+         const response = await fetch("http://localhost:3000/upload/bakery", {
+             method: "POST",
+             body: formData,
+         });
+ 
+         console.log("Fetch response received"); // ตรวจสอบว่าคำขอสำเร็จหรือไม่
+ 
+         // อ่าน `body` ของคำตอบเพียงครั้งเดียว
+         const responseData = await response.json();
+         
+         if (response.ok) {
+             alert("อัปโหลดสำเร็จ");
+             location.reload(); // รีโหลดหน้า
+         } else {
+             console.error("Error response:", responseData);
+             alert(`เกิดข้อผิดพลาดในการอัปโหลด: ${responseData.error || "Unknown Error"}`);
+         }
+     } catch (error) {
+         console.error("Error in submit function:", error);
+     }
+ });
+ 

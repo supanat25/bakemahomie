@@ -15,7 +15,6 @@
 
           <script type="module">
                import { handleFormSubmit } from "./script/admin.js";
-
                document
                     .getElementById("uploadForm")
                     .addEventListener("submit", handleFormSubmit);
@@ -45,46 +44,30 @@
                     <button type="button" class="btn btn-primary rounded-pill">
                          แก้ไข banner
                     </button>
-<!-- 
+
+                    <div id="filter-buttons" class="mb-3 mt-3">
+                         <button class="btn btn-secondary filter-button" data-type="all">All</button>
+                         <button class="btn btn-secondary filter-button" data-type="Cake">เค้ก</button>
+                         <button class="btn btn-secondary filter-button" data-type="Cheese Cake">ชีสเค้ก</button>
+                         <button class="btn btn-secondary filter-button" data-type="Tart">ทาร์ต</button>
+                         <button class="btn btn-secondary filter-button" data-type="Pound Calke">เค้กปอนด์</button>
+                         <button class="btn btn-secondary filter-button" data-type="Dry">ขนมแห้ง</button>
+                    </div>
+                     
+
                     <table class="table">
                          <thead>
                               <tr>
                                    <th scope="col">ID</th>
                                    <th scope="col">ชื่อขนม</th>
                                    <th scope="col">ประเภท</th>
+                                   <th scope="col">จัดการ</th>
                               </tr>
                          </thead>
                          <tbody>
-                              <tr>
-                                   <th scope="row">1</th>
-                                   <td>Mark</td>
-                                   <td>Otto</td>
-                                   <td>
-                                        <button class="btn btn-primary">
-                                             ดูรูป
-                                        </button>
-                                        <button class="btn btn-danger">
-                                             ลบ
-                                        </button>
-                                   </td>
-                              </tr>
+                              <!-- ข้อมูลจะถูกเพิ่มที่นี่ -->
                          </tbody>
-                    </table> -->
-
-                    <table class="table">
-                         <thead>
-                             <tr>
-                                 <th scope="col">ID</th>
-                                 <th scope="col">ชื่อขนม</th>
-                                 <th scope="col">ประเภท</th>
-                                 <th scope="col">จัดการ</th>
-                             </tr>
-                         </thead>
-                         <tbody>
-                             <!-- ข้อมูลจะถูกเพิ่มที่นี่ -->
-                         </tbody>
-                     </table>
-                     
+                    </table>
                </div>
           </main>
 
@@ -111,52 +94,103 @@
                          <div class="modal-body">
                               <form id="upload-form">
                                    <div class="mb-3">
-                                       <label for="name" class="form-label">ชื่อขนม</label>
-                                       <input type="text" class="form-control" id="name" required />
+                                        <label for="name" class="form-label"
+                                             >ชื่อขนม</label
+                                        >
+                                        <input
+                                             type="text"
+                                             class="form-control"
+                                             id="name"
+                                             required
+                                        />
                                    </div>
                                    <div class="mb-3">
-                                       <label for="type" class="form-label">ประเภท</label>
-                                       <select class="form-select" id="type" required>
-                                           <option value="1">เค้ก</option>
-                                           <option value="2">ชีสเค้ก</option>
-                                           <option value="3">ทาร์ต</option>
-                                           <option value="4">เค้กปอนด์</option>
-                                           <option value="5">ขนมแห้ง</option>
-                                           
-                                       </select>
+                                        <label for="type" class="form-label"
+                                             >ประเภท</label
+                                        >
+                                        <select
+                                             class="form-select"
+                                             id="type"
+                                             required
+                                        >
+                                             <option value="1">เค้ก</option>
+                                             <option value="2">ชีสเค้ก</option>
+                                             <option value="3">ทาร์ต</option>
+                                             <option value="4">
+                                                  เค้กปอนด์
+                                             </option>
+                                             <option value="5">ขนมแห้ง</option>
+                                        </select>
                                    </div>
 
                                    <div class="mb-3">
-                                        <label for="ingredient" class="form-label">ส่วนประกอบเด่น</label>
-                                        <select class="form-select" id="ingredient">
-                                            <option value=1>สตอเบอร์รี่</option>
-                                            <option value=2>บูลเบอร์รี่</option>
-                                            <option value="3">เลม่อน</option>
-                                            <option value="4">องุ่น</option>
-                                            <option value="5">มะม่วง</option>
-                                            <option value="6">ส้ม</option>
-                                            <option value="7">มะพร้าว</option>
-                                            <option value="8">ชาเขียว</option>
-                                            <option value="9">ชาไทย</option>
-                                            <option value="10">ช็อคโกแลต</option>
-                                            <option value="11">ธัญพืช</option>
-                                            <option value="12">ครีม</option>
-                                            <option value="13">ผลไม้รวม</option>
-                                            <option value="14">อื่นๆ</option>
-                                            
+                                        <label
+                                             for="ingredient"
+                                             class="form-label"
+                                             >ส่วนประกอบเด่น</label
+                                        >
+                                        <select
+                                             class="form-select"
+                                             id="ingredient"
+                                        >
+                                             <option value="1">
+                                                  สตอเบอร์รี่
+                                             </option>
+                                             <option value="2">
+                                                  บูลเบอร์รี่
+                                             </option>
+                                             <option value="3">เลม่อน</option>
+                                             <option value="4">องุ่น</option>
+                                             <option value="5">มะม่วง</option>
+                                             <option value="6">ส้ม</option>
+                                             <option value="7">มะพร้าว</option>
+                                             <option value="8">ชาเขียว</option>
+                                             <option value="9">ชาไทย</option>
+                                             <option value="10">
+                                                  ช็อคโกแลต
+                                             </option>
+                                             <option value="11">ธัญพืช</option>
+                                             <option value="12">ครีม</option>
+                                             <option value="13">
+                                                  ผลไม้รวม
+                                             </option>
+                                             <option value="14">อื่นๆ</option>
                                         </select>
-                                    </div>
-                                   <div class="mb-3">
-                                       <label for="image" class="form-label">อัปโหลดรูปภาพ</label>
-                                       <input type="file" class="form-control" id="image" accept="image/*" required />
                                    </div>
-                                   <button type="submit" class="btn btn-primary">อัปโหลด</button>
-                               </form>
-                               
+                                   <div class="mb-3">
+                                        <label for="image" class="form-label"
+                                             >อัปโหลดรูปภาพ</label
+                                        >
+                                        <input
+                                             type="file"
+                                             class="form-control"
+                                             id="image"
+                                             accept="image/*"
+                                             required
+                                        />
+                                   </div>
+                                   <button
+                                        type="submit"
+                                        class="btn btn-primary"
+                                   >
+                                        อัปโหลด
+                                   </button>
+                              </form>
                          </div>
                     </div>
                </div>
           </div>
+
+          <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+               <div class="modal-dialog modal-dialog-centered">
+                   <div class="modal-content">
+                       <div class="modal-body text-center">
+                           <img id="modalImage" src="" alt="รูปภาพ" class="img-fluid">
+                       </div>
+                   </div>
+               </div>
+           </div>
+           
           <footer class="text-center py-3 bg-dark text-white">
                &copy; 2024 Bakery Management
           </footer>

@@ -8,7 +8,7 @@ export let pondImages = [];
 // ฟังก์ชันสำหรับดึงข้อมูลจาก API
 export async function fetchImageData() {
     try {
-        const response = await fetch("http://localhost:3000/get_image_data/bakery");
+        const response = await fetch("http://localhost:3306/get_image_data/bakery");
         if (!response.ok) {
             throw new Error("Failed to fetch image data");
         }

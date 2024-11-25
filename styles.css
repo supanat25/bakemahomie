@@ -5,18 +5,48 @@ body {
     align-items: center;
     flex-direction: column;
     margin: 0 !important;
-    background-image: radial-gradient(circle, #ffdeef, #fce7f7, #faf0fc, #fbf8ff, #ffffff);
+    background-image: radial-gradient(circle, #f0f0f0, #f0f0f0, #f0f0f0, #f0f0f0, #f0f0f0);
 }
+
 
 .shadow-navbar {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.carousel-image {
-    height: 90vh;
-    width: 100;
-    object-fit: cover;
+.carousel-inner {
+    height: calc(100vh / 2);
+    /* สูง 1/3 ของหน้าจอ */
+    width: calc(100vw / 3);
+    overflow: hidden;
+    
 }
+
+.carousel-image {
+    object-fit: cover;
+    /* จัดการภาพให้ครอบคลุมพื้นที่ */
+    height: 100%;
+    /* ใช้พื้นที่เต็มของ carousel */
+    width: 100%;
+    
+}
+
+
+.contact-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.contact-content {
+    padding: 30px;
+    border-radius: 20px;
+    background: #ffbaba;
+    background: -webkit-radial-gradient(circle, #ffbaba 0%, #ffcbe7 100%);
+    background: radial-gradient(circle, #ffbaba 0%, #ffcbe7 100%);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
 
 /* Masonry Grid */
 .masonry-grid {
@@ -79,16 +109,16 @@ body {
     color: #e30c3b;
     text-align: center;
     margin-top: 10px;
-    font-weight:bolder;
+    font-weight: bolder;
     opacity: 0;
     max-height: 0;
     overflow: hidden;
     transition: opacity 0.5s ease, max-height 0.8s ease;
-    text-shadow: 
-    -1px -1px 0 #ffffff,  
-     1px -1px 0 #ffffff,
-    -1px  1px 0 #ffffff,
-     1px  1px 0 #ffffff;
+    text-shadow:
+        -1px -1px 0 #ffffff,
+        1px -1px 0 #ffffff,
+        -1px 1px 0 #ffffff,
+        1px 1px 0 #ffffff;
 }
 
 .image-name.show {
@@ -143,13 +173,6 @@ body {
 }
 
 
-#contact {
-    position: relative;
-    color: rgb(29, 29, 29);
-    overflow: hidden;
-    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.3);
-}
-
 #contact::before {
     content: "";
     position: absolute;
@@ -169,15 +192,6 @@ body {
     align-items: center;
     justify-content: center;
     color: #e30c3b;
-}
-
-
-
-.contact-info {
-    flex-direction: row;
-    gap: 20px;
-    position: relative;
-    z-index: 1;
 }
 
 /* Fullscreen modal overlay */
@@ -210,19 +224,6 @@ body {
         /* กำหนดจำนวนคอลัมน์ */
         column-gap: 1em;
         /* เว้นระยะระหว่างคอลัมน์ */
-    }
-
-    .container-fluid {
-        flex-direction: column;
-    }
-
-    .contact-image {
-
-        display: none !important;
-    }
-
-    .contact-info {
-        flex-direction: column;
     }
 
     .btn-group,

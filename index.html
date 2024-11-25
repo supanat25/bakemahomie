@@ -18,117 +18,46 @@
           <script src="script/fullscreen.js"></script>
      </head>
 
-     <body>
-          <!-- Navbar -->
-          <nav
-               class="navbar navbar-expand-lg fixed-top shadow-navbar"
-               style="background-color: #ffcbe7"
-               data-bs-spy="scroll"
-               data-bs-target="#navbar-example"
-               data-bs-offset="0"
-               tabindex="0"
-          >
-               <div class="container">
-                    <a class="navbar-brand" href="#">
-                         <img
-                              src="img/logo.png"
-                              alt="Logo"
-                              style="height: 40px"
-                         />
-                    </a>
-                    <button
-                         class="navbar-toggler"
-                         type="button"
-                         data-bs-toggle="collapse"
-                         data-bs-target="#navbarNav"
-                         aria-controls="navbarNav"
-                         aria-expanded="false"
-                         aria-label="Toggle navigation"
-                    >
-                         <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                         <ul class="navbar-nav ms-auto">
-                              <li class="nav-item">
-                                   <a class="nav-link" href="#menu">Menu</a>
-                              </li>
-                              <li class="nav-item">
-                                   <a class="nav-link" href="#contact"
-                                        >Contact</a
-                                   >
-                              </li>
-                              <li class="nav-item">
-                                   <a class="nav-link" href="admin.html"
-                                        >Admin</a
-                                   >
-                              </li>
-                         </ul>
-                    </div>
+<body>
+     <!-- Navbar -->
+     <nav class="navbar navbar-expand-lg fixed-top shadow-navbar" style="background-color: #ffcbe7" data-bs-spy="scroll"
+          data-bs-target="#navbar-example" data-bs-offset="0" tabindex="0">
+          <div class="container">
+               <a class="navbar-brand" href="#">
+                    <img src="img/logo.png" alt="Logo" style="height: 40px" />
+               </a>
+               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                         <li class="nav-item">
+                              <a class="nav-link" href="#menu">Menu</a>
+                         </li>
+                         <li class="nav-item">
+                              <a class="nav-link" href="#contact">Contact</a>
+                         </li>
+                         <li class="nav-item">
+                              <a class="nav-link" href="admin.html">Admin</a>
+                          </li>
+                    </ul>
                </div>
-          </nav>
-
-          <!-- Carousel -->
-          <!-- Carousel with equal-sized images -->
-          <div class="container mt-5">
-               <div class="row">
-                    <!-- Section Carousel -->
-                    <div class="col-lg-8 col-md-12 mt-4">
-                         <div
-                              id="carouselExampleControls"
-                              class="carousel slide"
-                              data-bs-ride="carousel"
-                         >
-                              <div class="carousel-inner">
-                                   <div class="carousel-item active">
-                                        <img
-                                             src="img/price.jpg"
-                                             class="d-block w-100 carousel-image"
-                                             alt="..."
-                                             onclick="openFullscreen(this.src)"
-                                        />
-                                   </div>
-                                   <div class="carousel-item">
-                                        <img
-                                             src="img/p001.jpg"
-                                             class="d-block w-100 carousel-image"
-                                             alt="..."
-                                             onclick="openFullscreen(this.src)"
-                                        />
-                                   </div>
-                                   <div class="carousel-item">
-                                        <img
-                                             src="img/tard/lemonTard.jpg"
-                                             class="d-block w-100 carousel-image"
-                                             alt="..."
-                                             onclick="openFullscreen(this.src)"
-                                        />
-                                   </div>
-                              </div>
-                              <button
-                                   class="carousel-control-prev"
-                                   type="button"
-                                   data-bs-target="#carouselExampleControls"
-                                   data-bs-slide="prev"
-                              >
-                                   <span
-                                        class="carousel-control-prev-icon"
-                                        aria-hidden="true"
-                                   ></span>
-                                   <span class="visually-hidden">Previous</span>
-                              </button>
-                              <button
-                                   class="carousel-control-next"
-                                   type="button"
-                                   data-bs-target="#carouselExampleControls"
-                                   data-bs-slide="next"
-                              >
-                                   <span
-                                        class="carousel-control-next-icon"
-                                        aria-hidden="true"
-                                   ></span>
-                                   <span class="visually-hidden">Next</span>
-                              </button>
-                         </div>
+          </div>
+     </nav>
+     <!-- Carousel -->
+     <!-- Carousel with equal-sized images -->
+     <div class="container mt-5">
+          <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+               <div class="carousel-inner">
+                    <div class="carousel-item active">
+                         <img src="img/price.jpg" class="d-block w-100 carousel-image" alt="..."
+                              onclick="openFullscreen(this.src)" />
+                         <!-- Replace "..." with your image source -->
+                    </div>
+                    <div class="carousel-item">
+                         <img src="img/p001.jpg" class="d-block w-100 carousel-image" alt="..."
+                              onclick="openFullscreen(this.src)" />
                     </div>
 
                     <!-- Section Contact -->

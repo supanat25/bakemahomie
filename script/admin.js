@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
      const loadTableData = async (filterType = "all") => {
           try {
                const response = await fetch(
-                    "http://back-bakemahomie.onrender.com/get_image_data/bakery"
+                    "https://back-bakemahomie.onrender.com/get_image_data/bakery"
                );
                const data = await response.json();
 
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
      const deleteBakery = async (id) => {
           try {
                const response = await fetch(
-                    `http://back-bakemahomie.onrender.com/delete_bakery/${id}`,
+                    `https://back-bakemahomie.onrender.com/delete_bakery/${id}`,
                     {
                          method: "DELETE",
                     }
@@ -120,7 +120,7 @@ document.getElementById("upload-form").addEventListener("submit", async (e) => {
      formData.append("image", imageFile);
 
      try {
-          const response = await fetch("http://back-bakemahomie.onrender.com/upload/bakery", {
+          const response = await fetch("https://back-bakemahomie.onrender.com/upload/bakery", {
                method: "POST",
                body: formData,
           });

@@ -13,6 +13,18 @@ function closeFullscreen() {
     modal.style.display = "none";
   }
 
+  function checkPassword() {
+    const password = prompt("Enter the password to access this page:");
+    const correctPassword = "1012";
+  
+    if (password === correctPassword) {
+      alert("Access Granted");
+      window.location.href = " admin.html"; // ลิงก์ไปยังหน้าที่ต้องการ
+    } else {
+      alert("Incorrect Password. Access Denied.");
+    }
+  }
+  
 
 //   document.querySelectorAll(".btn-view").forEach((button) => {
 //     button.addEventListener("click", (event) => {

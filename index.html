@@ -176,7 +176,7 @@
 
           <div class="container mt-5">
                <h2 class="text-center mb-4 fw-bold">Our Menu</h2>
-               
+
                <!-- <div class="container text-center my-4">
                     <div
                          class="btn-group"
@@ -228,101 +228,211 @@
                     </div>
                </div> -->
                <div class="container text-center my-4">
-                    <div class="btn-group" role="group" aria-label="Category Filter">
-                      <input
-                        type="radio"
-                        class="btn-check"
-                        name="category"
-                        id="btn-all"
-                        autocomplete="off"
-                        checked
-                      />
-                      <label
-                        class="btn btn-outline"
-                        for="btn-all"
-                        onclick="displayGallery('all')"
-                      >
-                        ทั้งหมด
-                      </label>
-                  
-                      <input
-                        type="radio"
-                        class="btn-check"
-                        name="category"
-                        id="btn-cake"
-                        autocomplete="off"
-                      />
-                      <label
-                        class="btn btn-outline"
-                        for="btn-cake"
-                        onclick="displayGallery('cake')"
-                      >
-                        เค้ก
-                      </label>
-                  
-                      <input
-                        type="radio"
-                        class="btn-check"
-                        name="category"
-                        id="btn-cheeseCake"
-                        autocomplete="off"
-                      />
-                      <label
-                        class="btn btn-outline"
-                        for="btn-cheeseCake"
-                        onclick="displayGallery('cheeseCake')"
-                      >
-                        ชีสเค้ก
-                      </label>
-                  
-                      <input
-                        type="radio"
-                        class="btn-check"
-                        name="category"
-                        id="btn-dry"
-                        autocomplete="off"
-                      />
-                      <label
-                        class="btn btn-outline"
-                        for="btn-dry"
-                        onclick="displayGallery('dry')"
-                      >
-                        ขนมแห้ง
-                      </label>
-                  
-                      <input
-                        type="radio"
-                        class="btn-check"
-                        name="category"
-                        id="btn-tard"
-                        autocomplete="off"
-                      />
-                      <label
-                        class="btn btn-outline"
-                        for="btn-tard"
-                        onclick="displayGallery('tard')"
-                      >
-                        ทาร์ต
-                      </label>
-                  
-                      <input
-                        type="radio"
-                        class="btn-check"
-                        name="category"
-                        id="btn-pond"
-                        autocomplete="off"
-                      />
-                      <label
-                        class="btn btn-outline"
-                        for="btn-pond"
-                        onclick="displayGallery('pond')"
-                      >
-                        เค้กวันเกิด
-                      </label>
+                    <div
+                         class="btn-group"
+                         role="group"
+                         aria-label="Category Filter"
+                    >
+                         <input
+                              type="radio"
+                              class="btn-check"
+                              name="category"
+                              id="btn-all"
+                              autocomplete="off"
+                              checked
+                         />
+                         <label
+                              class="btn btn-outline"
+                              for="btn-all"
+                              onclick="displayGallery('all')"
+                         >
+                              ทั้งหมด
+                         </label>
+
+                         <input
+                              type="radio"
+                              class="btn-check"
+                              name="category"
+                              id="btn-cake"
+                              autocomplete="off"
+                         />
+                         <label
+                              class="btn btn-outline"
+                              for="btn-cake"
+                              onclick="displayGallery('cake')"
+                         >
+                              เค้ก
+                         </label>
+
+                         <input
+                              type="radio"
+                              class="btn-check"
+                              name="category"
+                              id="btn-cheeseCake"
+                              autocomplete="off"
+                         />
+                         <label
+                              class="btn btn-outline"
+                              for="btn-cheeseCake"
+                              onclick="displayGallery('cheeseCake')"
+                         >
+                              ชีสเค้ก
+                         </label>
+
+                         <input
+                              type="radio"
+                              class="btn-check"
+                              name="category"
+                              id="btn-dry"
+                              autocomplete="off"
+                         />
+                         <label
+                              class="btn btn-outline"
+                              for="btn-dry"
+                              onclick="displayGallery('dry')"
+                         >
+                              ขนมแห้ง
+                         </label>
+
+                         <input
+                              type="radio"
+                              class="btn-check"
+                              name="category"
+                              id="btn-tard"
+                              autocomplete="off"
+                         />
+                         <label
+                              class="btn btn-outline"
+                              for="btn-tard"
+                              onclick="displayGallery('tard')"
+                         >
+                              ทาร์ต
+                         </label>
+
+                         <input
+                              type="radio"
+                              class="btn-check"
+                              name="category"
+                              id="btn-pond"
+                              autocomplete="off"
+                         />
+                         <label
+                              class="btn btn-outline"
+                              for="btn-pond"
+                              onclick="displayGallery('pond')"
+                         >
+                              เค้กวันเกิด
+                         </label>
                     </div>
-                  </div>
-                  <hr class="new1" />
-                  
+               </div>
+               <hr class="new1" />
+
+               <div class="container text-center my-4">
+                    <div
+                         class="btn-type"
+                         role="group"
+                         aria-label="Category Filter"
+                    >
+                         <button
+                              type="button"
+                              class="btn btn-primary btn-sm "
+                              onclick="displayGallery('')"
+                         >
+                              สตอเบอร์รี่
+                         </button>
+                         <button
+                              type="button"
+                              class="btn btn-primary btn-sm"
+                              onclick="displayGallery('cake')"
+                         >
+                              บลูเบอร์รี่
+                         </button>
+                         <button
+                              type="button"
+                              class="btn btn-primary btn-sm "
+                              onclick="displayGallery('cheeseCake')"
+                         >
+                              เลม่อน
+                         </button>
+                         <button
+                              type="button"
+                              class="btn btn-primary btn-sm "
+                              onclick="displayGallery('dry')"
+                         >
+                              องุ่น
+                         </button>
+                         <button
+                              type="button"
+                              class="btn btn-primary btn-sm"
+                              onclick="displayGallery('tard')"
+                         >
+                              มะม่วง
+                         </button>
+                         <button
+                              type="button"
+                              class="btn btn-primary btn-sm "
+                              onclick="displayGallery('pond')"
+                         >
+                              ส้ม
+                         </button>
+                         <button
+                              type="button"
+                              class="btn btn-primary btn-sm "
+                              onclick="displayGallery('dry')"
+                         >
+                              มะพร้าว
+                         </button>
+                         <button
+                              type="button"
+                              class="btn btn-primary btn-sm "
+                              onclick="displayGallery('tard')"
+                         >
+                              ชาเขียว
+                         </button>
+                         <button
+                              type="button"
+                              class="btn btn-primary btn-sm "
+                              onclick="displayGallery('pond')"
+                         >
+                              ชาไทย
+                         </button>
+                         <button
+                              type="button"
+                              class="btn btn-primary btn-sm "
+                              onclick="displayGallery('dry')"
+                         >
+                              ช็อกโกแลต
+                         </button>
+                         <button
+                              type="button"
+                              class="btn btn-primary btn-sm "
+                              onclick="displayGallery('tard')"
+                         >
+                              ธัญพืช
+                         </button>
+                         <button
+                              type="button"
+                              class="btn btn-primary btn-sm "
+                              onclick="displayGallery('pond')"
+                         >
+                              ครีม
+                         </button>
+                         <button
+                              type="button"
+                              class="btn btn-primary btn-sm "
+                              onclick="displayGallery('dry')"
+                         >
+                              ผลไม้รวม
+                         </button>
+                         <button
+                              type="button"
+                              class="btn btn-primary btn-sm"
+                              onclick="displayGallery('tard')"
+                         >
+                              อื่นๆ
+                         </button>
+                    </div>
+               </div>
 
                <div class="masonry-grid"></div>
           </div>

@@ -4,7 +4,7 @@
           <meta charset="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <title>BAKEMAHOMIE</title>
-          <link rel="stylesheet" href="styles.css" />
+          <link rel="stylesheet" href="./asset/css/styles.css" />
           <link
                href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
                rel="stylesheet"
@@ -13,10 +13,10 @@
           />
 
           <script type="module">
-               import { displayGallery } from "./script/gallery.js";
+               import { displayGallery } from "./js/gallery.js";
                window.displayGallery = displayGallery;
           </script>
-          <script src="script/fullscreen.js"></script>
+          <script src="js/fullscreen.js"></script>
      </head>
 
      <body>
@@ -32,7 +32,7 @@
                <div class="container">
                     <a class="navbar-brand" href="#">
                          <img
-                              src="img/logo.png"
+                              src="/asset/img/logo.png"
                               alt="Logo"
                               style="height: 40px"
                          />
@@ -62,7 +62,7 @@
                                    <a
                                         class="nav-link"
                                         href="#0"
-                                        onclick="openFullscreen('img/price.jpg')"
+                                        onclick="openFullscreen('asset/img/price.jpg')"
                                         >Pound Price</a
                                    >
                               </li>
@@ -73,7 +73,7 @@
 
           <!-- Carousel -->
           <!-- Carousel with equal-sized images -->
-          <div class="container mt-5">
+          <div class="container mt-5 py-5">
                <div class="row">
                     <!-- Section Carousel -->
                     <div class="col-lg-8 col-md-12 mt-4">
@@ -85,7 +85,7 @@
                               <div class="carousel-inner">
                                    <div class="carousel-item active">
                                         <img
-                                             src="img/price.jpg"
+                                             src="asset/img/price.jpg"
                                              class="d-block w-100 carousel-image"
                                              alt="..."
                                              onclick="openFullscreen(this.src)"
@@ -93,7 +93,7 @@
                                    </div>
                                    <div class="carousel-item">
                                         <img
-                                             src="img/p001.jpg"
+                                             src="asset/img/p001.jpg"
                                              class="d-block w-100 carousel-image"
                                              alt="..."
                                              onclick="openFullscreen(this.src)"
@@ -132,12 +132,12 @@
                          <div class="contact-content">
                               <div class="d-flex align-items-center mt-3">
                                    <img
-                                        src="img/instagram.png"
+                                        src="asset/img/instagram.png"
                                         alt="Instagram"
                                         style="width: 48px; height: 48px"
                                    />
                                    <a
-                                        href="img/line.jpg"
+                                        href="asset/img/line.jpg"
                                         class="fw-bold ms-4 fs-4 text-decoration-none text-reset contact-info"
                                         target="_blank"
                                         >bakemahomie</a
@@ -145,7 +145,7 @@
                               </div>
                               <div class="d-flex align-items-center mt-3">
                                    <img
-                                        src="img/phone-call.png"
+                                        src="asset/img/phone-call.png"
                                         alt="Phone"
                                         style="width: 48px; height: 48px"
                                    />
@@ -157,7 +157,7 @@
                               </div>
                               <div class="d-flex align-items-center mt-3">
                                    <img
-                                        src="img/bubble-chat.png"
+                                        src="asset/img/bubble-chat.png"
                                         alt="Line"
                                         style="width: 48px; height: 48px"
                                    />
@@ -172,9 +172,8 @@
                     </div>
                </div>
           </div>
-          <div id="menu"></div>
 
-          <div class="container mt-5">
+          <div class="container mt-4">
                <h2 class="text-center mb-4 fw-bold">Our Menu</h2>
 
                <!-- <div class="container text-center my-4">
@@ -327,15 +326,16 @@
                </div>
                <hr class="new1" />
 
-               <div class="container text-center my-4">
+               <div class="container text-center my-4 d-flex w-10 h-10">
                     <div
                          class="btn-type"
                          role="group"
                          aria-label="Category Filter"
+                         id="extra-buttons"
                     >
                          <button
                               type="button"
-                              class="btn btn-primary btn-sm "
+                              class="btn btn-primary btn-sm"
                               onclick="displayGallery('')"
                          >
                               สตอเบอร์รี่
@@ -349,14 +349,14 @@
                          </button>
                          <button
                               type="button"
-                              class="btn btn-primary btn-sm "
+                              class="btn btn-primary btn-sm"
                               onclick="displayGallery('cheeseCake')"
                          >
                               เลม่อน
                          </button>
                          <button
                               type="button"
-                              class="btn btn-primary btn-sm "
+                              class="btn btn-primary btn-sm"
                               onclick="displayGallery('dry')"
                          >
                               องุ่น
@@ -370,56 +370,56 @@
                          </button>
                          <button
                               type="button"
-                              class="btn btn-primary btn-sm "
+                              class="btn btn-primary btn-sm"
                               onclick="displayGallery('pond')"
                          >
                               ส้ม
                          </button>
                          <button
                               type="button"
-                              class="btn btn-primary btn-sm "
+                              class="btn btn-primary btn-sm"
                               onclick="displayGallery('dry')"
                          >
                               มะพร้าว
                          </button>
                          <button
                               type="button"
-                              class="btn btn-primary btn-sm "
+                              class="btn btn-primary btn-sm"
                               onclick="displayGallery('tard')"
                          >
                               ชาเขียว
                          </button>
                          <button
                               type="button"
-                              class="btn btn-primary btn-sm "
+                              class="btn btn-primary btn-sm"
                               onclick="displayGallery('pond')"
                          >
                               ชาไทย
                          </button>
                          <button
                               type="button"
-                              class="btn btn-primary btn-sm "
+                              class="btn btn-primary btn-sm"
                               onclick="displayGallery('dry')"
                          >
                               ช็อกโกแลต
                          </button>
                          <button
                               type="button"
-                              class="btn btn-primary btn-sm "
+                              class="btn btn-primary btn-sm"
                               onclick="displayGallery('tard')"
                          >
                               ธัญพืช
                          </button>
                          <button
                               type="button"
-                              class="btn btn-primary btn-sm "
+                              class="btn btn-primary btn-sm"
                               onclick="displayGallery('pond')"
                          >
                               ครีม
                          </button>
                          <button
                               type="button"
-                              class="btn btn-primary btn-sm "
+                              class="btn btn-primary btn-sm"
                               onclick="displayGallery('dry')"
                          >
                               ผลไม้รวม
@@ -444,14 +444,16 @@
           >
                <div class="footer-logo">
                     <img
-                         src="img/logo.png"
+                         src="asset/img/logo.png"
                          alt="Logo"
                          style="width: 150px; height: auto"
                     />
-                    <span class="ms-2 fs-6 fst-italic font-monospace"
+                    <span
+                         class="ms-2 fs-6 fst-italic font-monospace"
+                         onclick="checkPassword()"
                          >made by Apollo</span
                     >
-                    <span onclick="checkPassword()">admin</span>
+                    <!-- <span onclick="checkPassword()">admin</span> -->
                </div>
           </footer>
 

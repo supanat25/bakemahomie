@@ -6,7 +6,7 @@ export let dry = [];
 export let pondImages = [];
 
 
-// ฟังก์ชันสำหรับดึงข้อมูลจาก API
+
 export async function fetchImageData() {
     try {
         const response = await fetch("https://back-bakemahomie.onrender.com/get_image_data/bakery");
@@ -15,13 +15,14 @@ export async function fetchImageData() {
         }
         const images = await response.json();
 
-        // จัดกลุ่มข้อมูลตามประเภท
+        // จัดกลุ่ม
         allImages = images;
         cakeImages = images.filter(image => image.type_name === "Cake");
         cheeseImages = images.filter(image => image.type_name === "Cheese Cake");
         tardImages = images.filter(image => image.type_name === "Tart");
         dry = images.filter(image => image.type_name === "Dry");
         pondImages = images.filter(image => image.type_name === "Pound cake");
+
     } catch (error) {
         console.error("Error fetching image data:", error);
     }

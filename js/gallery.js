@@ -26,12 +26,16 @@ export function displayGallery(category) {
      galleryContainer.innerHTML = "";
 
      let imagesToDisplay = [];
-    if (category === "all") imagesToDisplay = allImages;
+    if (category === "all")imagesToDisplay = allImages;
     else if (category === "cake") imagesToDisplay = cakeImages;
     else if (category === "cheeseCake") imagesToDisplay = cheeseImages;
     else if (category === "pond") imagesToDisplay = pondImages;
     else if (category === "dry") imagesToDisplay = dry;
     else if (category === "tard") imagesToDisplay = tardImages;
+
+
+
+
 
       imagesToDisplay.forEach((image, index) => {
           const imgElement = document.createElement("img");

@@ -5,27 +5,66 @@ import {
      tardImages,
      dry,
      pondImages,
-     fetchImageData
+     fetchImageData,
 } from "./imageData.js";
 
 // เลือกปุ่มทั้งหมดใน .btn-group
-const buttons = document.querySelectorAll(".btn-group button");
+const categoryButtons = document.querySelectorAll(".btn-group .btn");
+const typeButtons = document.querySelectorAll(".btn-type .btn");
 
-// เพิ่มฟังก์ชัน displayGallery
-export function displayGallery(category) {
+let selectedCategory
+let selectedType = null; 
+
+
+export function displayGallery(category, type) {
+    console.log("................")
+    console.log("category = "  + category)
+    console.log("selectedCategory = "  + selectedCategory)
+    console.log("type = " +  type)
+    console.log("selectedType = "  + selectedType)
+
+    if (category !== null) {
+        selectedCategory = category;
+    } else {
+        category = selectedCategory; // ใช้ค่าที่เลือกไว้ก่อนหน้า
+    }
+
+    if (type !== null) {
+        // Toggle behavior for sub-type buttons
+        if (selectedType === type) {
+            selectedType = null;
+            type = null // Deselect if clicked again
+        } else {
+            selectedType = type;
+        }
+    } else {
+        type = selectedType; // ใช้ค่าที่เลือกไว้ก่อนหน้า
+    }
+
+
+
      // ลบคลาส active จากปุ่มทั้งหมด
-     buttons.forEach((button) => button.classList.remove("active"));
+     categoryButtons.forEach((button) => button.classList.remove("active"));
+     typeButtons.forEach((button) => button.classList.remove("active"));
+
 
      // เพิ่มคลาส active ให้กับปุ่มที่ถูกคลิก
-     const activeButton = document.querySelector(
-          `.btn-group button[onclick="displayGallery('${category}')"]`
-     );
-     if (activeButton) activeButton.classList.add("active");
+     const activeCategoryButton = document.querySelector(
+        `.btn-group .btn[onclick="displayGallery('${selectedCategory}')"]`
+    );
+    const activeTypeButton = document.querySelector(
+        `.btn-type .btn[onclick="displayGallery(null, '${selectedType}')"]`
+    );
+    if (activeCategoryButton) activeCategoryButton.classList.add("active");
+    if (selectedType && activeTypeButton) {
+        activeTypeButton.classList.add("active");
+    }
 
      const galleryContainer = document.querySelector(".masonry-grid");
      galleryContainer.innerHTML = "";
 
-     let imagesToDisplay = [];
+    let imagesToDisplay = [];
+
     if (category === "all")imagesToDisplay = allImages;
     else if (category === "cake") imagesToDisplay = cakeImages;
     else if (category === "cheeseCake") imagesToDisplay = cheeseImages;
@@ -33,8 +72,16 @@ export function displayGallery(category) {
     else if (category === "dry") imagesToDisplay = dry;
     else if (category === "tard") imagesToDisplay = tardImages;
 
+    if (type) {
+        imagesToDisplay = imagesToDisplay.filter(image => image.name_ingredient === selectedType);
+        console.log("sdfdfdfdfdf");
+    }
 
-
+    if (imagesToDisplay.length === 0) {
+        const noImageMessage = document.createElement("p");
+        noImageMessage.textContent = "ตอนนี้ยังไม่มีเมนูประเภทนี้ค่า :)";
+        galleryContainer.appendChild(noImageMessage);
+    }
 
 
       imagesToDisplay.forEach((image, index) => {
@@ -42,7 +89,7 @@ export function displayGallery(category) {
           imgElement.src = image.img_path;
           imgElement.classList.add("img-fluid");
       
-          // สร้าง nameElement สำหรับแสดงชื่อรูปภาพ
+          // แสดงชื่อรูปภาพ
           const nameElement = document.createElement("div");
           nameElement.classList.add("image-name");
           nameElement.textContent = image.name;
@@ -83,12 +130,7 @@ export function displayGallery(category) {
       
 }
 
-// // เรียกใช้งาน displayGallery('all') เมื่อโหลดหน้าเว็บ
-// document.addEventListener("DOMContentLoaded", () => {
-//      displayGallery("all");
-// });
-
 document.addEventListener("DOMContentLoaded", async () => {
-    await fetchImageData(); // เรียก API เพื่อดึงข้อมูล
-    displayGallery("all"); // แสดง Gallery
+    await fetchImageData(); 
+    displayGallery("all"); 
 });

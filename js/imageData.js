@@ -14,8 +14,13 @@ export async function fetchImageData() {
             throw new Error("Failed to fetch image data");
         }
         const images = await response.json();
-
-        // จัดกลุ่ม
+        // if (!type) {
+        //     // กรณีไม่มี type ให้กรองเฉพาะ category
+        //     filteredImages = images.filter(image => image.type_name === category);
+        // } else {
+        //     // กรณีมี type ให้กรองทั้ง category และ type
+        //     filteredImages = images.filter(image => image.type_name === category && image.sub_type === type);
+        // }
         allImages = images;
         cakeImages = images.filter(image => image.type_name === "Cake");
         cheeseImages = images.filter(image => image.type_name === "Cheese Cake");

@@ -73,7 +73,7 @@
 
           <!-- Carousel -->
           <!-- Carousel with equal-sized images -->
-          <div class="container mt-5 py-5">
+          <div class="container mt-5 py-3">
                <div class="row">
                     <!-- Section Carousel -->
                     <div class="col-lg-8 col-md-12 mt-4">
@@ -129,25 +129,34 @@
 
                     <!-- Section Contact -->
                     <div class="col-lg-4 col-md pt-4 contact-container">
+                        
                          <div class="contact-content">
-                              <div class="d-flex align-items-center mt-3">
+                             
+                              <div
+                                   class="d-flex align-items-center mt-3 contact"
+                              >
                                    <img
-                                        src="asset/img/instagram.png"
+                                   id="instagram-img"
+                                        src="asset/img/instagram2.png"
                                         alt="Instagram"
                                         style="width: 48px; height: 48px"
                                    />
                                    <a
-                                        href="asset/img/line.jpg"
+                                        href="https://www.instagram.com/bakemahomie/"
                                         class="fw-bold ms-4 fs-4 text-decoration-none text-reset contact-info"
                                         target="_blank"
                                         >bakemahomie</a
                                    >
                               </div>
-                              <div class="d-flex align-items-center mt-3">
+                              <div
+                                   class="d-flex align-items-center mt-3 contact"
+                              >
                                    <img
-                                        src="asset/img/phone-call.png"
+                                        id="phone-img"
+                                        src="asset/img/phone2.png"
                                         alt="Phone"
                                         style="width: 48px; height: 48px"
+                                        
                                    />
                                    <a
                                         href="tel:0988292025"
@@ -155,9 +164,12 @@
                                         >0988292025</a
                                    >
                               </div>
-                              <div class="d-flex align-items-center mt-3">
+                              <div
+                                   class="d-flex align-items-center mt-3 contact"
+                              >
                                    <img
-                                        src="asset/img/bubble-chat.png"
+                                        id="line-img"
+                                        src="asset/img/line2.png"
                                         alt="Line"
                                         style="width: 48px; height: 48px"
                                    />
@@ -166,6 +178,22 @@
                                         class="fw-bold ms-4 fs-4 text-decoration-none text-reset"
                                         target="_blank"
                                         >bakemahomie@line</a
+                                   >
+                              </div>
+                              <div
+                                   class="d-flex align-items-center mt-3 contact"
+                              >
+                                   <img
+                                        id="line-img"
+                                        src="asset/img/facebook2.png"
+                                        alt="Line"
+                                        style="width: 48px; height: 48px"
+                                   />
+                                   <a
+                                        href="https://line.me/ti/p/bakemahomie"
+                                        class="fw-bold ms-4 fs-4 text-decoration-none text-reset"
+                                        target="_blank"
+                                        >facebook</a
                                    >
                               </div>
                          </div>
@@ -226,7 +254,8 @@
                          </button>
                     </div>
                </div> -->
-               <div class="container text-center my-4"><!--type -->
+               <div class="container text-center my-4">
+                    <!--type -->
                     <div
                          class="btn-group"
                          role="group"
@@ -326,7 +355,8 @@
                </div>
                <hr class="new1" />
 
-              <div class="container text-center my-4 d-flex w-10 h-10">  <!-- sub-type -->
+               <div class="container text-center my-4 d-flex w-10 h-10">
+                    <!-- sub-type -->
                     <div
                          class="btn-type"
                          role="group"
@@ -335,7 +365,8 @@
                     >
                          <button
                               type="button"
-                              class="btn btn-primary btn-sm "
+                              class="btn btn-primary btn-sm"
+                              data-type="Strawberry"
                               onclick="displayGallery(null, 'Strawberry')"
                          >
                               สตอเบอร์รี่
@@ -343,6 +374,7 @@
                          <button
                               type="button"
                               class="btn btn-primary btn-sm"
+                              data-type="Blueberry"
                               onclick="displayGallery(null,'Blueberry')"
                          >
                               บลูเบอร์รี่
@@ -350,6 +382,7 @@
                          <button
                               type="button"
                               class="btn btn-primary btn-sm"
+                              data-type="Lemon"
                               onclick="displayGallery(null,'Lemon')"
                          >
                               เลม่อน
@@ -357,6 +390,7 @@
                          <button
                               type="button"
                               class="btn btn-primary btn-sm"
+                              data-type="Grape"
                               onclick="displayGallery(null,'Grape')"
                          >
                               องุ่น
@@ -364,6 +398,7 @@
                          <button
                               type="button"
                               class="btn btn-primary btn-sm"
+                              data-type="Mango"
                               onclick="displayGallery(null,'Mango')"
                          >
                               มะม่วง
@@ -371,6 +406,7 @@
                          <button
                               type="button"
                               class="btn btn-primary btn-sm"
+                              data-type="Orange"
                               onclick="displayGallery(null,'Orange')"
                          >
                               ส้ม
@@ -378,6 +414,7 @@
                          <button
                               type="button"
                               class="btn btn-primary btn-sm"
+                              data-type="Coconut"
                               onclick="displayGallery(null,'Coconut')"
                          >
                               มะพร้าว
@@ -385,6 +422,7 @@
                          <button
                               type="button"
                               class="btn btn-primary btn-sm"
+                              data-type="Green tea"
                               onclick="displayGallery(null,'Green tea')"
                          >
                               ชาเขียว
@@ -392,6 +430,7 @@
                          <button
                               type="button"
                               class="btn btn-primary btn-sm"
+                              data-type="Thai tea"
                               onclick="displayGallery(null,'Thai tea')"
                          >
                               ชาไทย
@@ -399,6 +438,7 @@
                          <button
                               type="button"
                               class="btn btn-primary btn-sm"
+                              data-type="Chocolate"
                               onclick="displayGallery(null,'Chocolate')"
                          >
                               ช็อกโกแลต
@@ -406,6 +446,7 @@
                          <button
                               type="button"
                               class="btn btn-primary btn-sm"
+                              data-type="Grains"
                               onclick="displayGallery(null,'Grains')"
                          >
                               ธัญพืช
@@ -413,6 +454,7 @@
                          <button
                               type="button"
                               class="btn btn-primary btn-sm"
+                              data-type="Cream"
                               onclick="displayGallery(null,'Cream')"
                          >
                               ครีม
@@ -420,6 +462,7 @@
                          <button
                               type="button"
                               class="btn btn-primary btn-sm"
+                              data-type="Fruits"
                               onclick="displayGallery(null,'Fruits')"
                          >
                               ผลไม้รวม
@@ -427,6 +470,7 @@
                          <button
                               type="button"
                               class="btn btn-primary btn-sm"
+                              data-type="Other"
                               onclick="displayGallery(null,'Other')"
                          >
                               อื่นๆ
@@ -470,5 +514,29 @@
                integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
                crossorigin="anonymous"
           ></script>
+
+          <script>
+               document
+                    .getElementById("instagram-img")
+                    .addEventListener("click", function () {
+                         window.open(
+                              "https://www.instagram.com/bakemahomie/",
+                              "_blank"
+                         );
+                    });
+               document
+                    .getElementById("phone-img")
+                    .addEventListener("click", function () {
+                         window.location.href = "tel:0988292025";
+                    });
+               document
+                    .getElementById("line-img")
+                    .addEventListener("click", function () {
+                         window.open(
+                              "https://line.me/ti/p/bakemahomie",
+                              "_blank"
+                         );
+                    });
+          </script>
      </body>
 </html>

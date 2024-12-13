@@ -49,16 +49,24 @@ export function displayGallery(category, type) {
 
 
      // เพิ่มคลาส active ให้กับปุ่มที่ถูกคลิก
-     const activeCategoryButton = document.querySelector(
+    const activeCategoryButton = document.querySelector(
         `.btn-group .btn[onclick="displayGallery('${selectedCategory}')"]`
     );
+
     const activeTypeButton = document.querySelector(
-        `.btn-type .btn[onclick="displayGallery(null, '${selectedType}')"]`
+        `.btn-type .btn[data-type="${selectedType}"]`
     );
+    console.log("Selected Type:", selectedType);
+console.log("Active Type Button:", activeTypeButton);
+
+
     if (activeCategoryButton) activeCategoryButton.classList.add("active");
     if (selectedType && activeTypeButton) {
         activeTypeButton.classList.add("active");
+    } else {
+        console.warn("No button matched for selectedType:", selectedType);
     }
+    
 
      const galleryContainer = document.querySelector(".masonry-grid");
      galleryContainer.innerHTML = "";
@@ -80,6 +88,12 @@ export function displayGallery(category, type) {
     if (imagesToDisplay.length === 0) {
         const noImageMessage = document.createElement("p");
         noImageMessage.textContent = "ตอนนี้ยังไม่มีเมนูประเภทนี้ค่า :)";
+        
+        noImageMessage.style.display = "flex";
+        noImageMessage.style.justifyContent = "center";
+        noImageMessage.style.alignItems = "center";
+        noImageMessage.style.height = "100%"; // ตัวอย่างสำหรับตั้งความสูง (หากต้องการ)
+
         galleryContainer.appendChild(noImageMessage);
     }
 

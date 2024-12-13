@@ -5,7 +5,7 @@ body {
     align-items: center;
     flex-direction: column;
     margin: 0 !important;
-    background-image:  linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),url(../img/bg-body.jpg);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url(../img/bg-body.jpg);
     /* -webkit-backdrop-filter: blur(1px);
     backdrop-filter: blur(1px); */
 }
@@ -39,25 +39,50 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+
 }
 
 .contact-content {
     padding: 30px;
     border-radius: 20px;
-    background: #ffbaba;
-    background: -webkit-radial-gradient(circle, #ffbaba 0%, #ffcbe7 100%);
-    background: radial-gradient(circle, #ffbaba 0%, #ffcbe7 100%);
+    background: rgba(255, 203, 231, 0.6);
+    -webkit-backdrop-filter: blur(0.5px);
+    backdrop-filter: blur(0.5px);
+    border: 1px solid rgba(255, 203, 231, 0.32);
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+
+}
+
+.contact-content img {
+    background-color: #ffffff;
+    /* clip-path: circle(60px);
+    border-radius: 50%; */
+    clip-path: circle(50%);
+    padding: 6px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+.contact-content a {
+    transition: 0.3s ease-in-out;
+}
+
+.contact-content img:hover {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+}
+
+.contact-content a:hover {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);;
 }
 
 
 /* Masonry Grid */
 .masonry-grid {
     column-count: 3;
-    /* กำหนดจำนวนคอลัมน์ */
     column-gap: 1em;
-    /* เว้นระยะระหว่างคอลัมน์ */
-
 }
 
 .masonry-item {
@@ -129,6 +154,7 @@ body {
     opacity: 0;
     transition: opacity 0.5s ease-in;
 }
+
 .fade-in.show {
     opacity: 1;
 }
@@ -140,6 +166,7 @@ body {
     border: none;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
+
 .btn-group .btn:hover {
     background-color: #FFCBE7;
     color: #e30c3b;
@@ -147,6 +174,7 @@ body {
     transition: 0.3s ease;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
+
 .btn-group .btn:focus {
     background-color: #FFCBE7;
     color: #e30c3b;
@@ -155,13 +183,13 @@ body {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.btn-group .btn:active {
-    background-color: #FFCBE7;
+.btn-group .btn.active {
+    background-color: #FFCBE7 !important;
     color: #e30c3b;
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-.btn-type{
+.btn-type {
     display: flex;
     flex-wrap: nowrap;
     overflow: auto;
@@ -169,6 +197,7 @@ body {
     gap: 8px;
     min-height: auto;
 }
+
 .btn-type .btn {
     min-width: fit-content;
     background-color: #FFCBE7;
@@ -177,18 +206,20 @@ body {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 
 }
+
 .btn-type .btn:hover {
     background-color: #e30c3b;
     color: #FFCBE7;
     border: none;
-    transition: 0.3s ease;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-
-
-
-
+.btn-type .btn.active {
+    background-color: #e30c3b ;
+    color: #FFCBE7;
+    border: none;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
 
 #contact::before {
     content: "";
@@ -235,6 +266,31 @@ body {
 
 
 @media (max-width: 768px) {
+
+
+    .contact-container {
+        display: inline-block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 90% !important;
+        /* margin-bottom: 5px; */
+    }
+
+    .contact-content {
+        display: flex;
+        justify-content: space-evenly;
+
+    }
+
+    .contact-content a {
+        display: none;
+
+    }
+
+    .contact-content .contact {
+        margin-top: 0 !important;
+
+    }
 
     .masonry-grid {
         column-count: 2;

@@ -62,10 +62,12 @@ export function displayGallery(category, type) {
 
 
     if (activeCategoryButton) activeCategoryButton.classList.add("active");
-    if (selectedType && activeTypeButton) {
-        activeTypeButton.classList.add("active");
-    } else {
-        console.warn("No button matched for selectedType:", selectedType);
+    if (activeTypeButton) {
+        if (selectedType) {
+            activeTypeButton.classList.add("active");
+        } else {
+            activeTypeButton.classList.remove("active");
+        }
     }
     
 

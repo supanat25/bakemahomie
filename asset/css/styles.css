@@ -216,11 +216,11 @@ body {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 } */
 
-.btn-group .btn.active {
+/* .btn-group .btn.active {
     background-color: #FFCBE7 !important;
     color: #e30c3b;
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
-}
+} */
 
 .btn-type {
     display: flex;

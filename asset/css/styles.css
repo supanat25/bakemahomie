@@ -1,9 +1,20 @@
-@font-face { font-family: 'Itim'; src: url('/asset/fonts/Itim/Itim-Regular.ttf') format('truetype'); }
-@font-face { font-family: 'Akaya Kanadaka'; src: url('/asset/fonts/Akaya_Kanadaka/AkayaKanadaka-Regular.ttf') format('truetype'); }
-@font-face { font-family: 'Kanit'; src: url('/asset/fonts/Kanit/Kanit-Light.ttf') format('truetype'); }
+@font-face {
+    font-family: 'Itim';
+    src: url('/asset/fonts/Itim/Itim-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Akaya Kanadaka';
+    src: url('/asset/fonts/Akaya_Kanadaka/AkayaKanadaka-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Kanit';
+    src: url('/asset/fonts/Kanit/Kanit-Light.ttf') format('truetype');
+}
 
 body {
-    font-family:'Kanit'!important;
+    font-family: 'Kanit' !important;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -109,12 +120,14 @@ body {
     transition: transform 0.5s ease-in-out;
 }
 
+
 .masonry-item img:hover {
-    -webkit-transform: scale(1.05);
-    -ms-transform: scale(1.05);
-    transform: scale(1.05);
+    transform: scale(1.01);
+    -webkit-transform: scale(1.01);
+    -ms-transform: scale(1.01);
     border-radius: 8px;
     -webkit-border-radius: 8px;
+    -ms-border-radius: 8px;
 }
 
 
@@ -133,26 +146,41 @@ body {
 }
 
 .image-name {
-    font-family: cursive;
-    font-size: 16px;
-    color: #e30c3b;
+    font-size: 2vw;
+    color: #ffffff;
     text-align: center;
-    margin-top: 10px;
     font-weight: bolder;
     opacity: 0;
     max-height: 0;
     overflow: hidden;
     transition: opacity 0.5s ease, max-height 0.8s ease;
-    text-shadow:
-        -1px -1px 0 #ffffff,
-        1px -1px 0 #ffffff,
-        -1px 1px 0 #ffffff,
-        1px 1px 0 #ffffff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(227, 12, 59, 0.8);
+    /* background-color: rgb(255, 203, 231,0.8); */
+    padding: 10px;
+    box-sizing: border-box;
+    height: 50%;
+    width: 80%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+
 }
 
 .image-name.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     opacity: 1;
-    max-height: 50px;
+    max-height: 30%;
+
+}
+
+.img-fluid.blur {
+    filter: blur(2px);
+    transition: filter 0.5s ease-in;
+
 }
 
 .fade-in {
@@ -226,7 +254,7 @@ body {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-#contact::before {
+footer {
     content: "";
     position: absolute;
     top: 0;
@@ -322,6 +350,26 @@ body {
 
     .btn-group label {
         font-size: 2.6vw;
+    }
+
+    .image-name {
+        font-size: 4vw;
+        color: #ffffff;
+        text-align: center;
+        font-weight: bolder;
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: opacity 0.5s ease, max-height 0.8s ease;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(227, 12, 59, 0.8);
+        padding: 10px;
+        box-sizing: border-box;
+        height: 50%;
+        width: 80%;
     }
 }
 

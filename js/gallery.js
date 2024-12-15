@@ -102,6 +102,8 @@ export function displayGallery(category, type) {
           const imgElement = document.createElement("img");
           imgElement.src = image.img_path;
           imgElement.classList.add("img-fluid");
+
+
       
           // แสดงชื่อรูปภาพ
           const nameElement = document.createElement("div");
@@ -111,6 +113,7 @@ export function displayGallery(category, type) {
           // เมื่อคลิกที่รูปภาพ ให้แสดงหรือซ่อนชื่อภาพพร้อมกับเอฟเฟกต์
           imgElement.addEventListener("click", () => {
               nameElement.classList.toggle("show");
+              imgElement.classList.toggle("blur");  
           });
       
           // สร้างปุ่มสำหรับแต่ละรูปภาพและเพิ่มฟังก์ชัน openFullscreen เมื่อคลิก
@@ -132,9 +135,9 @@ export function displayGallery(category, type) {
       
           const masonryItem = document.createElement("div");
           masonryItem.classList.add("masonry-item", "fade-in");
-          masonryItem.appendChild(buttonElement); // เพิ่มปุ่มเข้าใน masonryItem
-          masonryItem.appendChild(imgElement);
-          masonryItem.appendChild(nameElement);
+          masonryItem.appendChild(buttonElement); // เพิ่มปุ่มใน masonryItem
+          masonryItem.appendChild(imgElement); // เพิ่มรูปใน masonryItem
+          masonryItem.appendChild(nameElement); // เพิ่มชื่อใน masonryItem
           galleryContainer.appendChild(masonryItem);
       
           setTimeout(() => {

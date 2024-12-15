@@ -62,14 +62,20 @@ export function displayGallery(category, type) {
 
 
     if (activeCategoryButton) activeCategoryButton.classList.add("active");
-    if (activeTypeButton) activeTypeButton.classList.toggle('active');
-    // if (activeTypeButton) {
-    //     if (selectedType) {
-    //         activeTypeButton.classList.add("active");
-    //     } else {
-    //         activeTypeButton.classList.remove("active");
-    //     }
-    // }
+    
+    if (activeCategoryButton) {
+        activeCategoryButton.classList.add("active");
+        activeCategoryButton.blur(); // ลบ focus ของปุ่ม
+    }
+    
+    if (activeTypeButton) {
+        if (selectedType) {
+            activeTypeButton.classList.add("active");
+        } else {
+            activeTypeButton.classList.remove("active");
+        }
+        activeTypeButton.blur(); // ลบ focus ของปุ่ม
+    }
     
 
     //  const galleryContainer = document.querySelector(".masonry-grid");

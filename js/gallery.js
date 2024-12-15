@@ -62,13 +62,14 @@ export function displayGallery(category, type) {
 
 
     if (activeCategoryButton) activeCategoryButton.classList.add("active");
-    if (activeTypeButton) {
-        if (selectedType) {
-            activeTypeButton.classList.add("active");
-        } else {
-            activeTypeButton.classList.remove("active");
-        }
-    }
+    if (activeTypeButton) activeTypeButton.classList.toggle('active');
+    // if (activeTypeButton) {
+    //     if (selectedType) {
+    //         activeTypeButton.classList.add("active");
+    //     } else {
+    //         activeTypeButton.classList.remove("active");
+    //     }
+    // }
     
 
     //  const galleryContainer = document.querySelector(".masonry-grid");

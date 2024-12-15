@@ -17,6 +17,7 @@ let selectedType = null;
 
 
 export function displayGallery(category, type) {
+    const galleryContainer = document.getElementById("gallery-container");
     console.log("................")
     console.log("category = "  + category)
     console.log("selectedCategory = "  + selectedCategory)
@@ -57,7 +58,7 @@ export function displayGallery(category, type) {
         `.btn-type .btn[data-type="${selectedType}"]`
     );
     console.log("Selected Type:", selectedType);
-console.log("Active Type Button:", activeTypeButton);
+    console.log("Active Type Button:", activeTypeButton);
 
 
     if (activeCategoryButton) activeCategoryButton.classList.add("active");
@@ -68,7 +69,7 @@ console.log("Active Type Button:", activeTypeButton);
     }
     
 
-     const galleryContainer = document.querySelector(".masonry-grid");
+    //  const galleryContainer = document.querySelector(".masonry-grid");
      galleryContainer.innerHTML = "";
 
     let imagesToDisplay = [];
@@ -87,12 +88,11 @@ console.log("Active Type Button:", activeTypeButton);
 
     if (imagesToDisplay.length === 0) {
         const noImageMessage = document.createElement("p");
-        noImageMessage.textContent = "ตอนนี้ยังไม่มีเมนูประเภทนี้ค่า :)";
-        
-        noImageMessage.style.display = "flex";
-        noImageMessage.style.justifyContent = "center";
-        noImageMessage.style.alignItems = "center";
-        noImageMessage.style.height = "100%"; // ตัวอย่างสำหรับตั้งความสูง (หากต้องการ)
+        noImageMessage.textContent = "ยังไม่มีเมนูประเภทนี้ค่า :)";
+
+        noImageMessage.style.textAlign = "center";
+        noImageMessage.style.width  = "100%";
+
 
         galleryContainer.appendChild(noImageMessage);
     }

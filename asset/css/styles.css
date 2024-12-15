@@ -208,13 +208,13 @@ body {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.btn-group .btn:focus {
+/* .btn-group .btn:focus {
     background-color: #FFCBE7;
     color: #e30c3b;
     border: none;
     transition: 0.3s ease;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-}
+} */
 
 .btn-group .btn.active {
     background-color: #FFCBE7 !important;

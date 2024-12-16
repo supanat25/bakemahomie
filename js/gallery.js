@@ -59,27 +59,10 @@ export function displayGallery(category, type) {
      if (activeCategoryButton) activeCategoryButton.classList.add("active");
      if (activeTypeButton) {
         activeTypeButton.classList.toggle("active");
+        activeTypeButton.classList.remove("hover");
         activeTypeButton.blur(); // ลบ focus ของปุ่ม
      }
 
-     typeButtons.forEach((button) => {
-          button.addEventListener("mouseenter", () => {
-              if (!button.classList.contains("active")) {
-                  button.classList.add("hover");
-              }
-          });
-      
-          button.addEventListener("mouseleave", () => {
-              button.classList.remove("hover");
-          });
-      
-          button.addEventListener("click", () => {
-              // ลบ hover เมื่อปุ่ม active
-              if (button.classList.contains("active")) {
-                  button.classList.remove("hover");
-              }
-          });
-      });
      // if (activeTypeButton) {
      //     if (selectedType) {
      //         activeTypeButton.classList.add("active");

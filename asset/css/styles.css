@@ -247,12 +247,12 @@ body {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* .btn-type .btn.active {
+.btn-type .btn.active {
     background-color: #e30c3b;
     color: #FFCBE7;
     border: none;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-} */
+}
 
 footer {
     content: "";

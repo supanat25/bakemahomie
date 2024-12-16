@@ -58,10 +58,11 @@ export function displayGallery(category, type) {
 
      if (activeCategoryButton) activeCategoryButton.classList.add("active");
      if (activeTypeButton) {
-        activeTypeButton.classList.toggle("active");
-     //    activeTypeButton.classList.remove("hover");
-        activeTypeButton.blur(); // ลบ focus ของปุ่ม
-     }
+          activeTypeButton.classList.toggle("active");
+          activeTypeButton.blur(); // ลบ focus ออกจากปุ่ม
+          activeTypeButton.classList.remove("hover"); 
+      }
+      
 
      // if (activeTypeButton) {
      //     if (selectedType) {

@@ -59,7 +59,7 @@ export function displayGallery(category, type) {
      if (activeCategoryButton) activeCategoryButton.classList.add("active");
      if (activeTypeButton) {
         activeTypeButton.classList.toggle("active");
-        activeTypeButton.classList.remove("hover");
+     //    activeTypeButton.classList.remove("hover");
         activeTypeButton.blur(); // ลบ focus ของปุ่ม
      }
 

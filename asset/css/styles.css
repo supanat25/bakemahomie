@@ -266,6 +266,13 @@ body {
     }
 }
 
+@media (hover: none) and (pointer: coarse) {
+    .btn-type .btn:hover {
+        background-color: #FFCBE7 !important;
+        color: #e30c3b !important;
+    }
+}
+
 
 
 

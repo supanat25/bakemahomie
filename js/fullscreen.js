@@ -17,7 +17,6 @@ function checkPassword() {
      const correctPassword = "1012";
 
      if (password === correctPassword) {
-          alert("Access Granted");
           window.location.href = " admin.html"; // ลิงก์ไปยังหน้าที่ต้องการ
      } else {
           alert("Incorrect Password. Access Denied.");

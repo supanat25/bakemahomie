@@ -251,7 +251,7 @@
           <div class="container mt-4" id="menu">
                <p class="text-center mb-4 fw-bold fs-2">Our Menu</p>
 
-               <!-- <div class="container text-center my-4">
+          <!--      <div class="container text-center my-4">
                     <div
                          class="btn-group"
                          role="group"
@@ -260,49 +260,49 @@
                          <button
                               type="button"
                               class="btn btn-light rounded-pill active"
-                              onclick="displayGallery('all')"
+                              onclick="displayGallery('all',null)"
                          >
                               ทั้งหมด
                          </button>
                          <button
                               type="button"
                               class="btn btn-light rounded-pill"
-                              onclick="displayGallery('cake')"
+                              onclick="displayGallery('cake',null)"
                          >
                               เค้ก
                          </button>
                          <button
                               type="button"
                               class="btn btn-light rounded-pill"
-                              onclick="displayGallery('cheeseCake')"
+                              onclick="displayGallery('cheeseCake',null)"
                          >
                               ชีสเค้ก/ชีสพาย
                          </button>
                          <button
                               type="button"
                               class="btn btn-light rounded-pill"
-                              onclick="displayGallery('dry')"
+                              onclick="displayGallery('dry',null)"
                          >
                               ขนมแห้ง
                          </button>
                          <button
                               type="button"
                               class="btn btn-light rounded-pill"
-                              onclick="displayGallery('tard')"
+                              onclick="displayGallery('tard',null)"
                          >
                               ทาร์ต
                          </button>
                          <button
                               type="button"
                               class="btn btn-light rounded-pill"
-                              onclick="displayGallery('pond')"
+                              onclick="displayGallery('pond',null)"
                          >
                               เค้กปอนด์/เค้กวันเกิด
                          </button>
                     </div>
                </div> -->
                <div class="container text-center my-4">
-                    <!--type -->
+                    
                     <div
                          class="btn-group"
                          role="group"
@@ -353,7 +353,20 @@
                          >
                               ชีสเค้ก
                          </label>
-
+                        <input
+                              type="radio"
+                              class="btn-check"
+                              name="category"
+                              id="btn-tard"
+                              autocomplete="off"
+                         />
+                         <label
+                              class="btn btn-outline"
+                              for="btn-tard"
+                              onclick="displayGallery('tard', null)"
+                         >
+                              ทาร์ต
+                         </label>
                          <input
                               type="radio"
                               class="btn-check"
@@ -369,20 +382,7 @@
                               ขนมแห้ง
                          </label>
 
-                         <input
-                              type="radio"
-                              class="btn-check"
-                              name="category"
-                              id="btn-tard"
-                              autocomplete="off"
-                         />
-                         <label
-                              class="btn btn-outline"
-                              for="btn-tard"
-                              onclick="displayGallery('tard', null)"
-                         >
-                              ทาร์ต
-                         </label>
+ 
 
                          <input
                               type="radio"
@@ -469,8 +469,8 @@
                          <button
                               type="button"
                               class="btn btn-primary btn-sm"
-                              data-type="Green tea"
-                              onclick="displayGallery(null,'Green tea')"
+                              data-type="Green tea "
+                              onclick="displayGallery(null,'Green tea ')"
                          >
                               ชาเขียว
                          </button>

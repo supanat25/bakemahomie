@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
      const loadTableData = async (filterType = "all") => {
           try {
                const response = await fetch(
+                    // "http://localhost:3309/get_image_data/bakery"
                     "https://back-bakemahomie.onrender.com/get_image_data/bakery"
                );
                const data = await response.json();
@@ -35,6 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
                          <td>${item.type_name}</td>
                          
                          <td>
+                             <button class="btn btn-warning btn-edit" data-id="${item.id_bakery}" data-name="${item.name}">แก้ไข</button>
                              <button class="btn btn-primary btn-view" data-img="${item.img_path}" data-bs-toggle="modal" data-bs-target="#imageModal">ดูรูป</button>
                              <button class="btn btn-danger btn-delete" data-id="${item.id_bakery}">ลบ</button>
                          </td>
@@ -51,6 +53,14 @@ document.addEventListener("DOMContentLoaded", () => {
                     });
                 });
 
+                document.querySelectorAll(".btn-edit").forEach((button) => {
+                    button.addEventListener("click", (event) => {
+                         const bakeryId = event.target.getAttribute("data-id");
+                         const old_name = event.target.getAttribute("data-name");
+                         editBakery(bakeryId,old_name); // เรียกฟังก์ชันลบข้อมูล
+                    });
+               });
+
                // เพิ่ม EventListener ให้ปุ่ม "ลบ"
                document.querySelectorAll(".btn-delete").forEach((button) => {
                     button.addEventListener("click", (event) => {
@@ -62,6 +72,39 @@ document.addEventListener("DOMContentLoaded", () => {
                console.error("Error loading table data:", error);
           }
      };
+
+     const editBakery = async (id, old_name) => {
+          const name = prompt("แก้ไขชื่อ", old_name); // แสดงชื่อเดิมเป็นค่าเริ่มต้น
+      
+          // ตรวจสอบว่า name เป็น null หรือว่าง
+          if (name === null || name.trim() === "") {
+              return; // ไม่ทำการอัพเดทข้อมูล
+          }
+      
+          try {
+              const response = await fetch(
+               // "http://localhost:3309/edit_bakery",
+                  `https://back-bakemahomie.onrender.com/edit_bakery/`,
+                  {
+                      method: "PUT",
+                      headers: {
+                          "Content-Type": "application/json",
+                      },
+                      body: JSON.stringify({ id, name }),
+                  }
+              );
+      
+              if (response.ok) {
+                  alert("อัพเดทสำเร็จ");
+                  loadTableData(); // โหลดข้อมูลใหม่
+              } else {
+                  alert("อัพเดทไม่สำเร็จ");
+              }
+          } catch (error) {
+              console.error("Error update bakery:", error);
+          }
+      }
+      
 
      // ฟังก์ชันลบข้อมูล
      const deleteBakery = async (id) => {

@@ -23,21 +23,33 @@ export async function fetchImageData() {
         }
         const images = await response.json();
         
-        // แยกประเภทของรูปภาพ
-        allImages = images;
-        cakeImages = images.filter(image => image.type_name === "Cake");
-        cheeseImages = images.filter(image => image.type_name === "Cheese Cake");
-        tardImages = images.filter(image => image.type_name === "Tart");
-        dry = images.filter(image => image.type_name === "Dry");
-        pondImages = images.filter(image => image.type_name === "Pound cake");
+        // สลับตำแหน่งในอาเรย์
+        const shuffledImages = shuffleArray(images);
+        
+        // แยกประเภทรูป
+        allImages = shuffledImages;
+        cakeImages = shuffledImages.filter(image => image.type_name === "Cake");
+        cheeseImages = shuffledImages.filter(image => image.type_name === "Cheese Cake");
+        tardImages = shuffledImages.filter(image => image.type_name === "Tart");
+        dry = shuffledImages.filter(image => image.type_name === "Dry");
+        pondImages = shuffledImages.filter(image => image.type_name === "Pound cake");
     } catch (error) {
         console.error("Error fetching image data:", error);
         galleryContainer.innerHTML = `<p style="text-align: center;">เกิดข้อผิดพลาดในการโหลดข้อมูล :(</p>`;
     } finally {
-        // ซ่อน spinner
         spinner.style.display = "none";
     }
 }
+
+// สลับตำแหน่งในอาเรย์
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
 
 
 

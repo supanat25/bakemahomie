@@ -94,7 +94,6 @@ export function displayGallery(category, type) {
      if (imagesToDisplay.length === 0) {
           const noImageMessage = document.createElement("p");
           noImageMessage.textContent = "ยังไม่มีเมนูประเภทนี้ค่า :)";
-
           noImageMessage.style.textAlign = "center";
           noImageMessage.style.width = "100%";
 
